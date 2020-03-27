@@ -1,12 +1,18 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
-\usepackage{verbatim}
 \usepackage{geometry}
-\usepackage{enumitem}
+\usepackage{amsfonts} 
+\usepackage{ccicons}
+\usepackage{url}
+\usepackage{hyperref}
 
 \geometry{left = 2 cm, right = 2 cm, bottom = 2 cm, top = 2 cm}
 \setlength{\parindent}{0em}
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
 
 \title{Formule di Campi Elettromagnetici}
 \author{Lorenzo Rossi - lorenzo14.rossi@mail.polimi.it}
@@ -15,14 +21,20 @@
 \begin{document}
 \maketitle
 
-\section{GitHub}
-\begin{itemize}
-	\item Link repo di GitHub: https://github.com/lorossi/formulario-campi-elettromagnetici
-\end{itemize}
+\section{Riguardo al formulario}
+Quest'opera è distribuita con Licenza Creative Commons - Attribuzione Non commerciale 4.0 Internazionale \ccbynceu  \newline
+Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso.
+Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici} link diretto \href{https://github.com/lorossi/formulario-campi-elettromagnetici/blob/master/formule_campi.pdf}{qua}. \newline 
 
 \section{Trigonometria}
 \begin{itemize}
-	\item Teorema di Carnot \( a^2 = b^2 + c^2 - 2bccos(\alpha)\) con \(\alpha\) angolo compreso tra \(b\) e \(c\) 
+	\item Teorema di Carnot \( a^2 = b^2 + c^2 - 2bc\cos(\alpha)\) con \(\alpha\) angolo compreso tra \(b\) e \(c\) 
+\end{itemize}
+
+\section{Numeri complessi}
+\begin{itemize}
+	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} ( \cos{\frac{\theta + 2k\pi}{n}} + j \sin{\frac{\theta + 2 k \pi}{n}} ) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
+	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \frac{x + x^{*}}{2} \)
 \end{itemize}
 
 \section{Elettrostatica}
@@ -81,7 +93,7 @@
 	\item Legge di Biot Savart (integrale) \( \vec{F_{12}} = \frac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \frac{\vec{dl_1} \times [\vec{dl_2} \times \vec{a_{12}}]} {R^2} = \frac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \frac{\vec{a_{12}} \cdot [\vec{dl} \cdot \vec{d2}]} {R^2} \), \(\vec{F_{12}} = - \vec{F{21}} \)
 	\item Densità di flusso magnetico (differenziale) \( \vec{dB} = \frac{\mu_0}{4 \pi} \frac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} \)
 	\item Densità di flusso magnetico (integrale) \( \vec{B} = \oint\limits_{c_2} \frac{\mu_0}{4 \pi} \frac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \frac{\mu_0}{4 \pi} \frac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
-	\item Campo magnetico \( \vec{H} = \frac{\vec{B}}{\vec{\mu_0}} \)
+	\item Campo magnetico \( \vec{H} = \frac{\vec{B}}{\mu_0} \)
 	\item Autoinduttanza magnetica \(L_{11} = \frac{\Phi{11}}{I_1} = \frac{\int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \frac{\mu I_1}{4 \pi} \oint\limits_{c1} \frac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\Phi_{m, 11} = \frac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \frac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \frac{\mu}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c_1} \frac{\vec{dl} \times \vec{a_r}}{R^2}) \cdot \vec{ds}\)
 	\item Mutua induttanza \( L_{21} = \frac{\mu}{4 \pi} \int\limits_{s_2} ( \int\limits_{c_1} \frac{\vec{dl} \times \vec{a_r}}{R^2} ) \cdot \vec{ds} \)
 	\item Energia del sistema \( W_m = \frac{1}{2} L_{11} I_1^2 \)
@@ -116,11 +128,72 @@
 \begin{itemize}
 	\item Legge di Faraday \(\oint\limits_c \vec{E} \cdot \vec{dl} = - \int\limits_s \frac{\partial \vec{B}}{\partial t} \cdot \vec{ds} \) se la superficie non cambia nel tempo
 	\item Circuitazione di \( \vec{H} \) e corrente di spostamento \( \oint\limits_c \vec{H} \cdot \vec{dl} = \int\limits_s \vec{J} \cdot \vec{ds} + \frac{d}{dt} \int\limits_s \vec{D} \cdot \vec{ds} \)
-	\item Legge di conservazione della carica \( \oint\limits_s \vec{J} \cdot \vec{ds} = -\frac{d}{dt} \int\limits_\Omega \rho_\Omega \; d\Omega \)
+	\item Legge di conservazione della carica \( \oint\limits_s \vec{J} \cdot \vec{ds} = -\frac{d}{dt} \int\limits_\Omega \rho_\Omega \, d\Omega \)
+	\end{itemize}
+	
+\subsection{Teorema di Poyinting}
+\begin{itemize}
 	\item Vettore di Poynting \( \vec{S} = \vec{E} \times \vec{H} \)
-	\item Teorema di Poynting \( P_{diss} = \oint\limits_\Sigma \vec{S} \cdot d\,\Sigma \)
-	\item Equazione di Helmoltz (onda piana senza perdite) \( \frac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \frac{\partial^2 E(z, t)}{\partial z^2} = 0\)
-	\item Velocità della luce (velocità di propagazione delle onde) \( c = \frac{1}{\sqrt{\mu \epsilon}} \approx 3 \cdot 10^8 \)
-	\item Rapporto tra \( \vec{E} \) e \( \vec{H} \) nel vuoto \( \frac{\mu_0}{\epsilon_0} = 377 \, \Omega \)
+	\item Vettore di Poyting (dominio dei fasori) \( \vec{S} = \frac{1}{2} \vec{E} \times \vec{H}^{*} \)
+	\item Teorema di Poynting \( P_{diss} = \oint\limits_\Sigma \vec{S} \cdot d \,\Sigma \)
+	\item Vettore di Poynting associato ad un onda piana \( \vec{S_{ist}} = \frac{A^2}{\eta_0} \cos^2{(\omega t)} \, \vec{a_z} \), \( \vec{S_{ave}} = \frac{A^2}{2 \eta_0} \, \vec{a_z}\)
+	\item Vettore di Poynting associato ad un onda piana (dominio dei fasori) \( \vec{S_{ist}} = \frac{1}{2} Re[\vec{E} \times \vec{H}^{*}] \)
 \end{itemize}
+
+\subsection{Onde Piane}
+\begin{itemize}
+	\item Equazione di Helmoltz (onda piana uniforme senza perdite) \( \frac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \frac{\partial^2 E(z, t)}{\partial z^2} = 0\)
+	\item Equazione di Helmoltz (dominio dei fasori) \( \nabla^2 \vec{E} = \gamma^2 \vec{E} \)
+	\item Lunghezza d'onda \( \lambda = \frac{2 \pi}{\omega} = \frac{c}{f} \)	
+	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \( \beta = costante\ di\ fase = \frac{2 \pi}{\lambda} \)
+	\item Velocità della luce (velocità di propagazione delle onde) \( c = \frac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
+\end{itemize}
+
+\subsubsection{Polarizzazione}
+\begin{itemize}
+	\item Sia \( \vec{E}(x, y, z. t) \) un campo elettrico con componenti in sole \( x \) e \( z \). Allora, sul piano trasverso ( \( z = 0 \) ) si ottiene:
+	\begin{itemize}
+		\item \( \vec{E}(z, t) = E_x \cos ( \omega t) \vec{a_x} + E_Y \cos( \omega t + \phi_0) \vec{a_y}  \)
+		\item Si distinguono due casi particolari:
+		\begin{enumerate}
+			\item \( \phi_0 = 0 \), \( E_x, E_y \) qualsiasi. Allora: \( \xi  = \arctan(\frac{E_y}{E_x}) \), \( |\vec{E}(0, t)|^2 = (E_x^2 + E_y^2) \cos(\omega t) \) \textbf{Polarizzazione lineare}
+			\item  \( \phi_0 = \pm \frac{\pi}{2} \), \( E_x = E_y = E \). Allora: \( \xi(t)  = \mp \omega t \), \( |\vec{E}|^2 = E^2 \) \textbf{Polarizzazione circolare}
+		\end{enumerate}
+	\end{itemize}	  
+\end{itemize}
+
+
+\subsubsection{Incidenza normale su discontinuità piana}
+Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e \( y \) nella sezione \( z = cost \)
+\begin{itemize}
+	\item Coefficiente di riflessione \( \Gamma = \Gamma(0) \exp{2 j \beta z}  \), dove \( \Gamma(0) = \frac{n_2 - n_1}{n_2 + n_1}\), \( | \Gamma(0) | \leq 1 \)
+	\item Coefficiente di trasmissione \( T = T(0) \exp{2 j \beta z}  \), dove \( T(0) = \frac{2 n_2}{n_2 + n_1} = 1 + \Gamma(0)\), \( | T(0) | \leq 2 \)
+	\item Onda riflessa \( E_1^-(0) =  E_1^+(0) \cdot \Gamma (0) \)
+	\item Onda trasmessa \( E_2^+(0) =  E_1^+(0) \cdot T (0) \)
+	\item Impedenza d'onda \( Z(z) = \eta_1 (\frac{1 + \Gamma(z)}{1 - \Gamma(z)}) \)
+\end{itemize}
+
+
+\subsubsection{Mezzo senza perdite}
+\begin{itemize}
+	\item \( \sigma = 0 \Rightarrow \gamma = j \omega \sqrt{\mu \epsilon} \Rightarrow \alpha = 0, \beta = \omega \sqrt{\mu \epsilon} \) 
+	\item \( \eta = \sqrt{\frac{\mu}{\epsilon}}  = 377 \, \Omega \)
+	\item \( v = \frac{1}{\sqrt{\mu \epsilon}} = c \cong 3\times10^8 \, m/s \)
+	\item \( \lambda = \frac{v}{f} \)
+	\item Impedenza intrinseca del vuoto (dominio dei fasori) \( \frac{\vec{E^+}}{\vec{H^+}} = \frac{j \omega \mu}{\gamma} = \eta \), \(\frac{\vec{E^-}}{\vec{H^-}} = - \frac{j \omega \mu}{\gamma} = - \eta\) 
+\end{itemize}
+
+\subsubsection{Buon conduttore}
+\begin{itemize}
+	\item \( \sigma >> \omega \epsilon \Rightarrow \gamma = \sqrt{-\omega^2 \mu \epsilon} \)
+	\item \( \eta = \frac{1+j}{sqrt{2}} \sqrt{\frac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
+	\cong \sqrt{\frac{\omega \mu \sigma}{2}} \)
+	\item \( v \cong \frac{\omega}{\beta} \cong \sqrt{\frac{2 \omega}{\mu \sigma}} \)
+	\item \( \lambda = 2 \pi \delta = \frac{v}{f} \)
+	\item Spessore pelle \( \delta = \frac{1}{\alpha} = \frac{1}{\sqrt{\pi f \mu \sigma}} \)
+	\item Costante dielettrica \( \epsilon = \epsilon ^ { ' } + j \epsilon ^ { '' } \)
+	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
+\end{itemize}
+
+
 \end{document}
