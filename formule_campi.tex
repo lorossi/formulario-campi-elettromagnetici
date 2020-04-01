@@ -14,7 +14,7 @@
 	urlcolor=blue
 }
 
-\title{Formule di Campi Elettromagnetici}
+\title{Formulario di Campi Elettromagnetici}
 \author{Lorenzo Rossi - lorenzo14.rossi@mail.polimi.it}
 \date{AA 2019/2020}
 
@@ -47,6 +47,7 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 \begin{itemize}
 	\item Campo \(\vec{E}\) in presenza di cariche puntiformi \( \vec{E} = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{1}{R^2} \vec{a_r} \)
 	\item Densità di flusso elettrico \( \vec{D} = \epsilon_0 \vec{E} \),  \( \vec{E} = \frac{Q}{4 \pi} \cdot \frac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \frac{Q}{4 \pi} \cdot \frac{1}{R^2} \vec{a_r} \)
+	\item Densità superficiale di carica \( \sigma = D_n = \epsilon E_n \)6t
 	\item Momento di dipolo elettrico \( \vec{p} = Q \vec{d} \)
 	\item Potenziale elettrostatico \(dV = -\vec{E} \cdot \vec{dl} \Rightarrow V = -\int{\vec{E} \cdot \vec{dl}} \)
 	\item Relazioni tra \(\vec{D}\) ed \(\vec{e}\) \( \nabla \cdot (\epsilon_0 \vec{E} + \vec{P} ) = \rho_\Omega \), \( \vec{D} = \epsilon_0 \vec{E} + \vec{P} \)
@@ -145,8 +146,10 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 	\item Equazione di Helmoltz (onda piana uniforme senza perdite) \( \frac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \frac{\partial^2 E(z, t)}{\partial z^2} = 0\)
 	\item Equazione di Helmoltz (dominio dei fasori) \( \nabla^2 \vec{E} = \gamma^2 \vec{E} \)
 	\item Lunghezza d'onda \( \lambda = \frac{2 \pi}{\omega} = \frac{c}{f} \)	
-	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \( \beta = costante\ di\ fase = \frac{2 \pi}{\lambda} \)
+	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \newline \( \beta = costante\ di\ fase = \frac{2 \pi}{\lambda} \)
 	\item Velocità della luce (velocità di propagazione delle onde) \( c = \frac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
+	\item Impedenza intrinseca del mezzo \( \eta = \frac{E^+}{H^+} \)
+	\item Impedenza d'onza \( Z = \frac{E^+ - E^-}{H^+ - H^-} \)
 \end{itemize}
 
 \subsubsection{Polarizzazione}
@@ -166,8 +169,8 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 \subsubsection{Incidenza normale su discontinuità piana}
 Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e \( y \) nella sezione \( z = cost \)
 \begin{itemize}
-	\item Coefficiente di riflessione \( \Gamma = \Gamma(0) \exp{2 j \beta z}  \), dove \( \Gamma(0) = \frac{n_2 - n_1}{n_2 + n_1}\), \( | \Gamma(0) | \leq 1 \)
-	\item Coefficiente di trasmissione \( T = T(0) \exp{2 j \beta z}  \), dove \( T(0) = \frac{2 n_2}{n_2 + n_1} = 1 + \Gamma(0)\), \( | T(0) | \leq 2 \)
+	\item Coefficiente di riflessione \( \Gamma = \Gamma(0) \exp(2 j \beta z)  \), dove \( \Gamma(0) = \frac{n_2 - n_1}{n_2 + n_1}\), \( | \Gamma(0) | \leq 1 \)
+	\item Coefficiente di trasmissione \( T = T(0) \exp(2 j \beta z)  \), dove \( T(0) = \frac{2 n_2}{n_2 + n_1} = 1 + \Gamma(0)\), \( | T(0) | \leq 2 \)
 	\item Onda riflessa \( E_1^-(0) =  E_1^+(0) \cdot \Gamma (0) \)
 	\item Onda trasmessa \( E_2^+(0) =  E_1^+(0) \cdot T (0) \)
 	\item Impedenza d'onda \( Z(z) = \eta_1 (\frac{1 + \Gamma(z)}{1 - \Gamma(z)}) \)
@@ -193,6 +196,12 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Spessore pelle \( \delta = \frac{1}{\alpha} = \frac{1}{\sqrt{\pi f \mu \sigma}} \)
 	\item Costante dielettrica \( \epsilon = \epsilon ^ { ' } + j \epsilon ^ { '' } \)
 	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
+\end{itemize}
+
+\section{Linee TEM}
+\begin{itemize}
+	\item Equazione 1 \( \frac{\partial V(z, t)}{\partial z} = - \frac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
+	\item Equazione 2 \( \frac{\partial I(z, t)}{\partial z} = - \frac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
 \end{itemize}
 
 
