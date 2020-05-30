@@ -6,6 +6,7 @@
 \usepackage{ccicons}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{amsmath}
 
 \geometry{left = 2 cm, right = 2 cm, bottom = 2 cm, top = 2 cm}
 \setlength{\parindent}{0em}
@@ -33,46 +34,46 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 
 \section{Numeri complessi}
 \begin{itemize}
-	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} ( \cos{\frac{\theta + 2k\pi}{n}} + j \sin{\frac{\theta + 2 k \pi}{n}} ) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
-	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \frac{x + x^{*}}{2} \)
+	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} ( \cos{\dfrac{\theta + 2k\pi}{n}} + j \sin{\dfrac{\theta + 2 k \pi}{n}} ) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
+	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \dfrac{x + x^{*}}{2} \)
 \end{itemize}
 
 \section{Elettrostatica}
 \begin{itemize}
-	\item Legge di Coulomb \( \vec{F} = \frac{Qq}{4 \pi \epsilon_0 R^2} \vec{a_r} = \frac{Qq}{4 \pi \epsilon_0} \cdot \frac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } \)
-	\item Legge di Gauss \( \nabla \cdot \vec{D} = \rho_\Omega \leftrightarrow \nabla \cdot \vec{E} = \frac{\rho_\Omega}{\epsilon} \)
+	\item Legge di Coulomb \( \vec{F} = \dfrac{Qq}{4 \pi \epsilon_0 R^2} \vec{a_r} = \dfrac{Qq}{4 \pi \epsilon_0} \cdot \dfrac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } \)
+	\item Legge di Gauss \( \nabla \cdot \vec{D} = \rho_\Omega \leftrightarrow \nabla \cdot \vec{E} = \dfrac{\rho_\Omega}{\epsilon} \)
 \end{itemize}
 
 \subsection{Campo Elettrico}
 \begin{itemize}
-	\item Campo \(\vec{E}\) in presenza di cariche puntiformi \( \vec{E} = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \frac{Q}{4 \pi \epsilon_0} \cdot \frac{1}{R^2} \vec{a_r} \)
-	\item Densità di flusso elettrico \( \vec{D} = \epsilon_0 \vec{E} \),  \( \vec{E} = \frac{Q}{4 \pi} \cdot \frac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \frac{Q}{4 \pi} \cdot \frac{1}{R^2} \vec{a_r} \)
+	\item Campo \(\vec{E}\) in presenza di cariche puntiformi \( \vec{E} = \dfrac{Q}{4 \pi \epsilon_0} \cdot \dfrac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \dfrac{Q}{4 \pi \epsilon_0} \cdot \dfrac{1}{R^2} \vec{a_r} \)
+	\item Densità di flusso elettrico \( \vec{D} = \epsilon_0 \vec{E} \),  \( \vec{E} = \dfrac{Q}{4 \pi} \cdot \dfrac{(\vec{R_q} - \vec{R_p})}{| \vec{R_q} - \vec{R_p} | ^3 } = \dfrac{Q}{4 \pi} \cdot \dfrac{1}{R^2} \vec{a_r} \)
 	\item Densità superficiale di carica \( \sigma = D_n = \epsilon E_n \)6t
 	\item Momento di dipolo elettrico \( \vec{p} = Q \vec{d} \)
-	\item Potenziale elettrostatico \(dV = -\vec{E} \cdot \vec{dl} \Rightarrow V = -\int{\vec{E} \cdot \vec{dl}} \)
+	\item Potenziale elettrostatico \(\displaystyle dV = -\vec{E} \cdot \vec{dl} \Rightarrow V = -\int{\vec{E} \cdot \vec{dl}} \)
 	\item Relazioni tra \(\vec{D}\) ed \(\vec{e}\) \( \nabla \cdot (\epsilon_0 \vec{E} + \vec{P} ) = \rho_\Omega \), \( \vec{D} = \epsilon_0 \vec{E} + \vec{P} \)
 	\item All'interno di mezzi lineari \(\vec{P} = \epsilon_0 \chi \vec{E} \) con \(\chi\) detta suscettività elettrica, \(\chi \geq  0\)
 	\item Relazione tra \(\epsilon\) e \(\chi\) \(\epsilon = (1 + \chi_e) \epsilon_0 = \epsilon_0 \epsilon_r \rightarrow \epsilon_r = 1 + \chi_e \rightarrow \vec{D} = \epsilon \vec{E} = \epsilon_0 \epsilon_r \vec{E} = \epsilon_0 (1 + \chi_e) \vec{E} = \epsilon_0 \vec{E} + \vec{P} \)
 	\item Relazione tra \(\vec{P}\), \(\vec{D}\),\(\vec{E}\) nei mezzi isotropi \(\vec{P}\|\vec{D}\|\vec{E}\)
-	\item Energia del sistema \( W_e = \frac{1}{2} \sum\limits_{i=1}^{n}Q_iV_i = \frac{1}{2} \int\limits_\Omega \rho_\Omega V d\Omega = \frac{1}{2} \int\limits_{s} \vec{D} \cdot \vec{E} d\Omega = \frac{1}{2} \int\limits_{s} \epsilon |\vec{E}|^2 d\Omega \)
-	\item Densità di energia \( w_e = \frac{1}{2} \vec{D} \cdot \vec{E} = \frac{1}{2} \epsilon |\vec{E}|^2 \)
+	\item Energia del sistema \(\displaystyle W_e = \dfrac{1}{2} \sum\limits_{i=1}^{n}Q_iV_i = \dfrac{1}{2} \int\limits_\Omega \rho_\Omega V d\Omega = \dfrac{1}{2} \int\limits_{s} \vec{D} \cdot \vec{E} d\Omega = \dfrac{1}{2} \int\limits_{s} \epsilon |\vec{E}|^2 d\Omega \)
+	\item Densità di energia \( w_e = \dfrac{1}{2} \vec{D} \cdot \vec{E} = \dfrac{1}{2} \epsilon |\vec{E}|^2 \)
 \end{itemize}
 
 \subsubsection{Interfaccia tra due mezzi}
 \begin{itemize}
-	\item \textbf{conduttori} (componente tangenziale) \(E_{1t} = E_{2t}\), \(\vec{a_n} \times (\vec{E_2} - \vec{E_1}) = 0 \), \( \frac{\vec{D_{1t}}}{\vec{D_{2t}}} = \frac{\epsilon_1}{\epsilon_2} \)
+	\item \textbf{conduttori} (componente tangenziale) \(E_{1t} = E_{2t}\), \(\vec{a_n} \times (\vec{E_2} - \vec{E_1}) = 0 \), \( \dfrac{\vec{D_{1t}}}{\vec{D_{2t}}} = \dfrac{\epsilon_1}{\epsilon_2} \)
 	\item \textbf{conduttori} (componente normale) \( D_{2n} - D_{1n} = \rho_s \), \(\vec{a_n} \cdot (\vec{D_2} - \vec{D_1}) = \rho_s \), \(\epsilon_{2n} E_{2n} - \epsilon_{1n} E_{1n} = \rho_s \)
-	\item \textbf{dielettrici} (componente tangenziale) \( E_{2t} = E_{1t} \), \( D_{2t} = \frac{\epsilon_2}{\epsilon_1} D_{1t} \)
-	\item \textbf{dielettrici} (componente normale) \( D_{2n} = D_{1n} \), \( E_{2n} = \frac{\epsilon_1}{\epsilon_2} E_{1n} \)
+	\item \textbf{dielettrici} (componente tangenziale) \( E_{2t} = E_{1t} \), \( D_{2t} = \dfrac{\epsilon_2}{\epsilon_1} D_{1t} \)
+	\item \textbf{dielettrici} (componente normale) \( D_{2n} = D_{1n} \), \( E_{2n} = \dfrac{\epsilon_1}{\epsilon_2} E_{1n} \)
 	\item \textbf{conduttore e dielettrico} (componente tangenziale) \( E_{2t} = 0\), \(D_{2t} = 0\)
-	\item \textbf{conduttore e dielettrico} (componente normale) \( D_{2n} = \rho_s \), \( E_{2n} = \frac{\rho_s}{\epsilon_2} \)
+	\item \textbf{conduttore e dielettrico} (componente normale) \( D_{2n} = \rho_s \), \( E_{2n} = \dfrac{\rho_s}{\epsilon_2} \)
 \end{itemize}
 
 \subsection{Capacità elettrica}
 \begin{itemize}
-	\item Condensatore a facce piane parallele \( C = \frac{Q}{V} = \frac{\epsilon_0 \epsilon_r A}{d} \)
-	\item Formula generale \(C = \frac{Q}{V} = \frac{\oint\limits_{S}\vec{D} \cdot \vec{dS}}{-\int\limits_{P_1}^{P_2} \vec{E} \cdot \vec{dl}} \)
-	\item Energia immagazzinata in un condensatore \(W_e = \frac{1}{2} Q V = \frac{1}{2} C V^2 = \frac{1}{2} \frac{Q^2}{C} \)
+	\item Condensatore a facce piane parallele \( C = \dfrac{Q}{V} = \dfrac{\epsilon_0 \epsilon_r A}{d} \)
+	\item Formula generale \(\displaystyle C = \dfrac{Q}{V} = \dfrac{\oint\limits_{S}\vec{D} \cdot \vec{dS}}{-\int\limits_{P_1}^{P_2} \vec{E} \cdot \vec{dl}} \)
+	\item Energia immagazzinata in un condensatore \(W_e = \dfrac{1}{2} Q V = \dfrac{1}{2} C V^2 = \dfrac{1}{2} \dfrac{Q^2}{C} \)
 \end{itemize}
 
 \subsection{Corrente elettrica / Legge di Ohm}
@@ -85,26 +86,26 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 
 \section{Magnetostatica}
 \begin{itemize}
-	\item Legge di Ampere \( \oint\limits_{c} \vec{H} \cdot \vec{dl} = \int\limits_{s} \vec{J} \cdot \vec{ds} \leftrightarrow \nabla \times \vec{H} = \vec{J} \)
+	\item Legge di Ampere \( \displaystyle \oint\limits_{c} \vec{H} \cdot \vec{dl} = \int\limits_{s} \vec{J} \cdot \vec{ds} \leftrightarrow \nabla \times \vec{H} = \vec{J} \)
 \end{itemize}
 
 \subsection{Campo Magnetico}
 \begin{itemize}
-	\item Legge di Biot Savart (differenziale) \( \vec{dF_{12}} = \frac{\mu_0}{4 \pi} \frac{I_1 \vec{dl_1} \times [I_2 \vec{dl_2} \times \vec{a_{12}}] }{R^2} \)
-	\item Legge di Biot Savart (integrale) \( \vec{F_{12}} = \frac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \frac{\vec{dl_1} \times [\vec{dl_2} \times \vec{a_{12}}]} {R^2} = \frac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \frac{\vec{a_{12}} \cdot [\vec{dl} \cdot \vec{d2}]} {R^2} \), \(\vec{F_{12}} = - \vec{F{21}} \)
-	\item Densità di flusso magnetico (differenziale) \( \vec{dB} = \frac{\mu_0}{4 \pi} \frac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} \)
-	\item Densità di flusso magnetico (integrale) \( \vec{B} = \oint\limits_{c_2} \frac{\mu_0}{4 \pi} \frac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \frac{\mu_0}{4 \pi} \frac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
-	\item Campo magnetico \( \vec{H} = \frac{\vec{B}}{\mu_0} \)
-	\item Autoinduttanza magnetica \(L_{11} = \frac{\Phi{11}}{I_1} = \frac{\int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \frac{\mu I_1}{4 \pi} \oint\limits_{c1} \frac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\Phi_{m, 11} = \frac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \frac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \frac{\mu}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c_1} \frac{\vec{dl} \times \vec{a_r}}{R^2}) \cdot \vec{ds}\)
-	\item Mutua induttanza \( L_{21} = \frac{\mu}{4 \pi} \int\limits_{s_2} ( \int\limits_{c_1} \frac{\vec{dl} \times \vec{a_r}}{R^2} ) \cdot \vec{ds} \)
-	\item Energia del sistema \( W_m = \frac{1}{2} L_{11} I_1^2 \)
-	\item Densità di energia  \( w_m = \frac{1}{2} \vec{B} \cdot \vec{H} = \frac{1}{2} \mu H^2 \)
+	\item Legge di Biot Savart (differenziale) \( \vec{dF_{12}} = \dfrac{\mu_0}{4 \pi} \dfrac{I_1 \vec{dl_1} \times [I_2 \vec{dl_2} \times \vec{a_{12}}] }{R^2} \)
+	\item Legge di Biot Savart (integrale) \( \vec{F_{12}} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{dl_1} \times [\vec{dl_2} \times \vec{a_{12}}]} {R^2} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{a_{12}} \cdot [\vec{dl} \cdot \vec{d2}]} {R^2} \), \(\vec{F_{12}} = - \vec{F{21}} \)
+	\item Densità di flusso magnetico (differenziale) \( \vec{dB} = \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} \)
+	\item Densità di flusso magnetico (integrale) \( \vec{B} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
+	\item Campo magnetico \( \vec{H} = \dfrac{\vec{B}}{\mu_0} \)
+	\item Autoinduttanza magnetica \(\displaystyle L_{11} = \dfrac{\Phi{11}}{I_1} = \dfrac{\int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \dfrac{\mu I_1}{4 \pi} \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\displaystyle \Phi_{m, 11} = \dfrac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \dfrac{\mu}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2}) \cdot \vec{ds}\)
+	\item Mutua induttanza \(\displaystyle L_{21} = \dfrac{\mu}{4 \pi} \int\limits_{s_2} ( \int\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2} ) \cdot \vec{ds} \)
+	\item Energia del sistema \( W_m = \dfrac{1}{2} L_{11} I_1^2 \)
+	\item Densità di energia  \( w_m = \dfrac{1}{2} \vec{B} \cdot \vec{H} = \dfrac{1}{2} \mu H^2 \)
 \end{itemize}
 
 \subsubsection{Campo Magnetico nei materiali}
 \begin{itemize}
 	\item Momento di dipolo magnetico \( \vec{m} = A \cdot I \cdot \vec{a_n} \)
-	\item Densità di momento magnetico \(\vec{M} = \lim\limits_{\Delta\Omega \rightarrow 0} \frac{\sum_i \vec{m_i}}{\Delta\Omega}\) se il mezzo è lineare \( \vec{M} = \chi_m \vec{H} \) con \(\chi_m\) detta suscettività magnetica
+	\item Densità di momento magnetico \(\vec{M} = \lim\limits_{\Delta\Omega \rightarrow 0} \dfrac{\sum_i \vec{m_i}}{\Delta\Omega}\) se il mezzo è lineare \( \vec{M} = \chi_m \vec{H} \) con \(\chi_m\) detta suscettività magnetica
 	\item Permeabilità del mezzo \( \mu = \mu_0 \mu_r = \mu_0 (1 + \chi_m) \)
 	\item Relazione tra \( \vec{H} \) e \( \vec{M} \): \( \vec{B} = \mu \vec{H} = \mu_0 \mu_r \vec{H} = \mu_0 (1 + \chi_m) \vec{H} = \mu_0 (\vec{H} + \vec{M}) \)
 \end{itemize}
@@ -113,96 +114,179 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 
 \subsubsection{Interfaccia tra due mezzi}
 \begin{itemize}
-	\item Componente tangenziale \( H_{2t} - H_{1t} = J_{sn} \), \( \frac{J_{2t}}{\sigma_2} = \frac{J_{1t}}{\sigma_1} \)
-	\item Componente normale \( H_{2n} = \frac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot (\vec{B_2} - \vec{B_1}) = 0 \), \( \rho_s = ( \epsilon_2 - \epsilon_1 \frac{\sigma_2}{\sigma_1}) E_{2n} \),  \( \rho_s = ( \epsilon_1 - \epsilon_2 \frac{\sigma_1}{\sigma_2}) E_{1n} \)
+	\item Componente tangenziale \( H_{2t} - H_{1t} = J_{sn} \), \( \dfrac{J_{2t}}{\sigma_2} = \dfrac{J_{1t}}{\sigma_1} \)
+	\item Componente normale \( H_{2n} = \dfrac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot (\vec{B_2} - \vec{B_1}) = 0 \), \( \rho_s = ( \epsilon_2 - \epsilon_1 \dfrac{\sigma_2}{\sigma_1}) E_{2n} \),  \( \rho_s = ( \epsilon_1 - \epsilon_2 \dfrac{\sigma_1}{\sigma_2}) E_{1n} \)
 \end{itemize}
 
 \subsection{Resistenza elettrica / Legge di Joule}
 \begin{itemize}
-	\item Resistenza \( R = \frac{V}{I} = \frac{-\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{J} \cdot \vec{ds}} = \frac{1}{\sigma} \frac{\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{E} \cdot \vec{ds}} \)
-	\item Relazione tra resitenza e capacità \(R \cdot C = \frac{\epsilon}{\sigma} \leftrightarrow \frac{G}{C} = \frac{\sigma}{\epsilon} \)
-	\item Legge di Joule (differenziale) \( \frac{\partial P}{\partial \Omega} = \vec{E} \cdot \vec{J} \) detta anche potenza specifica
-	\item Legge di Joule (integrale) \( P = \int\limits_\Omega \vec{E} \cdot \vec{J} \; d\Omega \)
+	\item Resistenza \(\displaystyle  R = \dfrac{V}{I} = \dfrac{-\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{J} \cdot \vec{ds}} = \dfrac{1}{\sigma} \dfrac{\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{E} \cdot \vec{ds}} \)
+	\item Relazione tra resitenza e capacità \(R \cdot C = \dfrac{\epsilon}{\sigma} \leftrightarrow \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \)
+	\item Legge di Joule (differenziale) \( \dfrac{\partial P}{\partial \Omega} = \vec{E} \cdot \vec{J} \) detta anche potenza specifica
+	\item Legge di Joule (integrale) \(\displaystyle P = \int\limits_\Omega \vec{E} \cdot \vec{J} \; d\Omega \)
 \end{itemize}
 
 \section{Regime dinamico}
 \begin{itemize}
-	\item Legge di Faraday \(\oint\limits_c \vec{E} \cdot \vec{dl} = - \int\limits_s \frac{\partial \vec{B}}{\partial t} \cdot \vec{ds} \) se la superficie non cambia nel tempo
-	\item Circuitazione di \( \vec{H} \) e corrente di spostamento \( \oint\limits_c \vec{H} \cdot \vec{dl} = \int\limits_s \vec{J} \cdot \vec{ds} + \frac{d}{dt} \int\limits_s \vec{D} \cdot \vec{ds} \)
-	\item Legge di conservazione della carica \( \oint\limits_s \vec{J} \cdot \vec{ds} = -\frac{d}{dt} \int\limits_\Omega \rho_\Omega \, d\Omega \)
+	\item Legge di Faraday \(\displaystyle \oint\limits_c \vec{E} \cdot \vec{dl} = - \int\limits_s \dfrac{\partial \vec{B}}{\partial t} \cdot \vec{ds} \) se la superficie non cambia nel tempo
+	\item Circuitazione di \( \vec{H} \) e corrente di spostamento \(\displaystyle \oint\limits_c \vec{H} \cdot \vec{dl} = \int\limits_s \vec{J} \cdot \vec{ds} + \dfrac{d}{dt} \int\limits_s \vec{D} \cdot \vec{ds} \)
+	\item Legge di conservazione della carica \(\displaystyle \oint\limits_s \vec{J} \cdot \vec{ds} = -\dfrac{d}{dt} \int\limits_\Omega \rho_\Omega \, d\Omega \)
 	\end{itemize}
 	
 \subsection{Teorema di Poyinting}
 \begin{itemize}
 	\item Vettore di Poynting \( \vec{S} = \vec{E} \times \vec{H} \)
-	\item Vettore di Poyting (dominio dei fasori) \( \vec{S} = \frac{1}{2} \vec{E} \times \vec{H}^{*} \)
+	\item Vettore di Poyting (dominio dei fasori) \( \vec{S} = \dfrac{1}{2} \vec{E} \times \vec{H}^{*} \)
 	\item Teorema di Poynting \( P_{diss} = \oint\limits_\Sigma \vec{S} \cdot d \,\Sigma \)
-	\item Vettore di Poynting associato ad un onda piana \( \vec{S_{ist}} = \frac{A^2}{\eta_0} \cos^2{(\omega t)} \, \vec{a_z} \), \( \vec{S_{ave}} = \frac{A^2}{2 \eta_0} \, \vec{a_z}\)
-	\item Vettore di Poynting associato ad un onda piana (dominio dei fasori) \( \vec{S_{ist}} = \frac{1}{2} Re[\vec{E} \times \vec{H}^{*}] \)
+	\item Vettore di Poynting associato ad un onda piana \( \vec{S_{ist}} = \dfrac{A^2}{\eta_0} \cos^2{(\omega t)} \, \vec{a_z} \), \( \vec{S_{ave}} = \dfrac{A^2}{2 \eta_0} \, \vec{a_z}\)
+	\item Vettore di Poynting associato ad un onda piana (dominio dei fasori) \( \vec{S_{ist}} = \dfrac{1}{2} Re[\vec{E} \times \vec{H}^{*}] \)
 \end{itemize}
 
-\subsection{Onde Piane}
+\section{Onde Piane}
 \begin{itemize}
-	\item Equazione di Helmoltz (onda piana uniforme senza perdite) \( \frac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \frac{\partial^2 E(z, t)}{\partial z^2} = 0\)
+	\item Equazione di Helmoltz (onda piana uniforme senza perdite) \( \dfrac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \dfrac{\partial^2 E(z, t)}{\partial z^2} = 0\)
 	\item Equazione di Helmoltz (dominio dei fasori) \( \nabla^2 \vec{E} = \gamma^2 \vec{E} \)
-	\item Lunghezza d'onda \( \lambda = \frac{2 \pi}{\omega} = \frac{c}{f} \)	
-	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \newline \( \beta = costante\ di\ fase = \frac{2 \pi}{\lambda} \)
-	\item Velocità della luce (velocità di propagazione delle onde) \( c = \frac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
-	\item Impedenza intrinseca del mezzo \( \eta = \frac{E^+}{H^+} \)
-	\item Impedenza d'onza \( Z = \frac{E^+ - E^-}{H^+ - H^-} \)
+	\item Lunghezza d'onda \( \lambda = \dfrac{2 \pi}{\omega} = \dfrac{c}{f} \)	
+	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \newline \( \beta = costante\ di\ fase = \dfrac{2 \pi}{\lambda} \)
+	\item Velocità della luce (velocità di propagazione delle onde) \( c = \dfrac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
+	\item Impedenza intrinseca del mezzo \( \eta = \dfrac{E^+}{H^+} \)
+	\item Impedenza d'onda \( Z = \dfrac{E^+ - E^-}{H^+ - H^-} \)
+	\item Indice di rifrazione \( n = \dfrac{c}{v} = \sqrt{\epsilon_r \mu_r} \)
 \end{itemize}
 
-\subsubsection{Polarizzazione}
+\subsection{Polarizzazione}
 \begin{itemize}
 	\item Sia \( \vec{E}(x, y, z. t) \) un campo elettrico con componenti in sole \( x \) e \( z \). Allora, sul piano trasverso ( \( z = 0 \) ) si ottiene:
 	\begin{itemize}
 		\item \( \vec{E}(z, t) = E_x \cos ( \omega t) \vec{a_x} + E_Y \cos( \omega t + \phi_0) \vec{a_y}  \)
 		\item Si distinguono due casi particolari:
 		\begin{enumerate}
-			\item \( \phi_0 = 0 \), \( E_x, E_y \) qualsiasi. Allora: \( \xi  = \arctan(\frac{E_y}{E_x}) \), \( |\vec{E}(0, t)|^2 = (E_x^2 + E_y^2) \cos(\omega t) \) \textbf{Polarizzazione lineare}
-			\item  \( \phi_0 = \pm \frac{\pi}{2} \), \( E_x = E_y = E \). Allora: \( \xi(t)  = \mp \omega t \), \( |\vec{E}|^2 = E^2 \) \textbf{Polarizzazione circolare}
+			\item \( \phi_0 = 0 \), \( E_x, E_y \) qualsiasi. Allora: \( \xi  = \arctan\left(\dfrac{E_y}{E_x}\right) \), \( |\vec{E}(0, t)|^2 = (E_x^2 + E_y^2) \cos(\omega t) \) \textbf{Polarizzazione lineare}
+			\item  \( \phi_0 = \pm \dfrac{\pi}{2} \), \( E_x = E_y = E \). Allora: \( \xi(t)  = \mp \omega t \), \( |\vec{E}|^2 = E^2 \) \textbf{Polarizzazione circolare}
 		\end{enumerate}
 	\end{itemize}	  
 \end{itemize}
 
+\subsection{Incidenza delle onde}
 
 \subsubsection{Incidenza normale su discontinuità piana}
 Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e \( y \) nella sezione \( z = cost \)
 \begin{itemize}
-	\item Coefficiente di riflessione \( \Gamma = \Gamma(0) \exp(2 j \beta z)  \), dove \( \Gamma(0) = \frac{n_2 - n_1}{n_2 + n_1}\), \( | \Gamma(0) | \leq 1 \)
-	\item Coefficiente di trasmissione \( T = T(0) \exp(2 j \beta z)  \), dove \( T(0) = \frac{2 n_2}{n_2 + n_1} = 1 + \Gamma(0)\), \( | T(0) | \leq 2 \)
+	\item Coefficiente di riflessione \( \Gamma = \Gamma(0) \exp(2 j \beta z)  \), dove \( \Gamma(0) = \dfrac{n_2 - n_1}{n_2 + n_1}\), \( | \Gamma(0) | \leq 1 \)
+	\item Coefficiente di trasmissione \( T = T(0) \exp(2 j \beta z)  \), dove \( T(0) = \dfrac{2 n_2}{n_2 + n_1} = 1 + \Gamma(0)\), \( | T(0) | \leq 2 \)
 	\item Onda riflessa \( E_1^-(0) =  E_1^+(0) \cdot \Gamma (0) \)
 	\item Onda trasmessa \( E_2^+(0) =  E_1^+(0) \cdot T (0) \)
-	\item Impedenza d'onda \( Z(z) = \eta_1 (\frac{1 + \Gamma(z)}{1 - \Gamma(z)}) \)
+	\item Impedenza d'onda \( Z(z) = \eta_1 \left(\dfrac{1 + \Gamma(z)}{1 - \Gamma(z)}\right) \)
 \end{itemize}
 
+\subsubsection{Incidenza non normale}
+\textbf{Ipotesi:} onda su piano \(xz\)
+\begin{itemize}
+	\item Impedenza TE \( \eta^{TE}_n = \dfrac{\eta}{cos(\theta_n)} \)
+	\item Impedenza TM \( \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
+	\item Componente TE dell'onda ha componente \(y\)
+	\item Componente TE dell'onda ha componenti \(xz\)
+	\item Angolo di incidenza \( \theta = \arctan\left( \dfrac{\beta_z}{\beta_x} \right) \)
+	\item Costante di propagazione \(\gamma \rightarrow\) va proiettata nelle direzioni \(x\) e \(y\) tramite \(\sin\) e \(\cos\)
+\end{itemize}
 
-\subsubsection{Mezzo senza perdite}
+\subsubsection{Trasmissione totale}
+\begin{itemize}
+	\item Indice di rifrazione \( \Gamma = 0 \leftrightarrow Z_L = Z_{in} \)
+	\item Angolo di Brewster \( \theta_P = \arcsin\left(\sqrt{\dfrac{\epsilon_2}{\epsilon_1 + \epsilon_2}}\right) = \arctan\dfrac{n_2}{n_1}\)
+\end{itemize}
+
+\subsection{Mezzi attraversati dalle onde}
+\subsection{Mezzo senza perdite}
 \begin{itemize}
 	\item \( \sigma = 0 \Rightarrow \gamma = j \omega \sqrt{\mu \epsilon} \Rightarrow \alpha = 0, \beta = \omega \sqrt{\mu \epsilon} \) 
-	\item \( \eta = \sqrt{\frac{\mu}{\epsilon}}  = 377 \, \Omega \)
-	\item \( v = \frac{1}{\sqrt{\mu \epsilon}} = c \cong 3\times10^8 \, m/s \)
-	\item \( \lambda = \frac{v}{f} \)
-	\item Impedenza intrinseca del vuoto (dominio dei fasori) \( \frac{\vec{E^+}}{\vec{H^+}} = \frac{j \omega \mu}{\gamma} = \eta \), \(\frac{\vec{E^-}}{\vec{H^-}} = - \frac{j \omega \mu}{\gamma} = - \eta\) 
+	\item \( \eta = \sqrt{\dfrac{\mu}{\epsilon}}  = 377 \, \Omega \)
+	\item \( v = \dfrac{1}{\sqrt{\mu \epsilon}} = c \cong 3\times10^8 \, m/s \)
+	\item \( \lambda = \dfrac{v}{f} \)
+	\item Impedenza intrinseca del vuoto (dominio dei fasori) \( \dfrac{\vec{E^+}}{\vec{H^+}} = \dfrac{j \omega \mu}{\gamma} = \eta \), \(\dfrac{\vec{E^-}}{\vec{H^-}} = - \dfrac{j \omega \mu}{\gamma} = - \eta\) 
 \end{itemize}
 
-\subsubsection{Buon conduttore}
+\subsection{Buon conduttore}
 \begin{itemize}
 	\item \( \sigma >> \omega \epsilon \Rightarrow \gamma = \sqrt{-\omega^2 \mu \epsilon} \)
-	\item \( \eta = \frac{1+j}{sqrt{2}} \sqrt{\frac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
-	\cong \sqrt{\frac{\omega \mu \sigma}{2}} \)
-	\item \( v \cong \frac{\omega}{\beta} \cong \sqrt{\frac{2 \omega}{\mu \sigma}} \)
-	\item \( \lambda = 2 \pi \delta = \frac{v}{f} \)
-	\item Spessore pelle \( \delta = \frac{1}{\alpha} = \frac{1}{\sqrt{\pi f \mu \sigma}} \)
+	\item \( \eta = \dfrac{1+j}{sqrt{2}} \sqrt{\dfrac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
+	\cong \sqrt{\dfrac{\omega \mu \sigma}{2}} \)
+	\item \( v \cong \dfrac{\omega}{\beta} \cong \sqrt{\dfrac{2 \omega}{\mu \sigma}} \)
+	\item \( \lambda = 2 \pi \delta = \dfrac{v}{f} \)
+	\item Spessore pelle \( \delta = \dfrac{1}{\alpha} = \dfrac{1}{\sqrt{\pi f \mu \sigma}} \)
 	\item Costante dielettrica \( \epsilon = \epsilon ^ { ' } + j \epsilon ^ { '' } \)
 	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
 \end{itemize}
 
 \section{Linee TEM}
 \begin{itemize}
-	\item Equazione 1 \( \frac{\partial V(z, t)}{\partial z} = - \frac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
-	\item Equazione 2 \( \frac{\partial I(z, t)}{\partial z} = - \frac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
+	\item Equazione 1 \( \dfrac{\partial V(z, t)}{\partial z} = - \dfrac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
+	\item Equazione 2 \( \dfrac{\partial I(z, t)}{\partial z} = - \dfrac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
+	\item Uguaglianze \( \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \), \(L_0 C_0 = \mu_0 \epsilon_0  \)
+	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} \)
 \end{itemize}
 
+\subsection{Cavo coassiale}
+\begin{itemize}
+	\item Capacità \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
+	\item Induttanza \( L = \dfrac{\mu_0}{2 \pi} \ln\left(\dfrac{b}{a}\right) \)
+	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \)
+	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'}\)
+	\item Impedenza \( Z_C = \sqrt{\dfrac{L}{C}} = \dfrac{\eta}{2 \pi} \ln\left(\dfrac{b}{a} \right) =  \dfrac{1}{2 \pi} \sqrt{\dfrac{\mu}{\epsilon}} \ln\left(\dfrac{b}{a}\right)\)
+	\item Resistenza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \), \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
+	\item Conduttanza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
+\end{itemize}
 
+\section{Linee quasi TEM}
+\begin{itemize}
+	\item Velocità nell'onda \( v = \dfrac{1}{\sqrt{LC}} \)
+	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
+\end{itemize}
+
+\section{Adattamento di potenza}
+\begin{itemize}
+	\item Potenza disponibile \( P_D = \dfrac{|V_g|^2}{8 R_g} = P_D \)
+	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) \)   
+\end{itemize}
+
+\section{Guide d'onda rettangolari}
+\begin{itemize}
+	\item Pulsazione di taglio \( \omega_c = \dfrac{1}{\sqrt{\omega \epsilon}} \sqrt{\left( \dfrac{m \pi}{a}\right)^2 + \left( \dfrac{m \pi}{b} \right)^2 }\) con \(a\), \(b\) interi
+	\item Impedenza modale \( Z_{te} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{\omega_c}{\omega} \right) }} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{f_c}{f} \right) }} \)
+	\item Frequenza di taglio \( f_c = \dfrac{1}{2a \sqrt{\mu \epsilon}} \)
+	\item Velocità di gruppo \( v_g = v \sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)} \)
+	\item Lunghezza d'onda di gruppo \( \lambda_g = \dfrac{\lambda}{\sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)}}\)
+	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z_{te}} \)
+	\item Coefficiente di attenuazione \( \alpha = \dfrac{2 \pi}{\lambda_c} \sqrt{1 - \left( \dfrac{f}{f_c} \right) ^ 2} \)
+\end{itemize}
+
+\section{Antenne}
+\begin{itemize}
+	\item Direttività \( \displaystyle D = \dfrac{4 \pi}{\int{f(\theta, \phi) d \Omega}} = \dfrac{S_{max}}{S_{iso}} \)	
+	\item Area efficace \( \displaystyle A_e = \dfrac{|l_e| ^ 2 \eta_0}{4 R} \)
+	\item Relazione universale \( \dfrac{G}{A_e} = \dfrac{4 \pi}{\lambda^2} \)
+	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \cdot \sqrt{f_r(\theta, \phi} \)
+	\item Potenza ricevuta \(P_R = P_D = S_{inc} \cdot A_e \cdot  f(\theta, \phi) \)
+\end{itemize}
+
+\subsection{Dipolo Hertziano}
+\begin{itemize}
+	\item Lunghezza efficace \(l_e = l\)
+	\item Area efficace \(A_e = \dfrac{3}{8} \dfrac{\lambda^2}{\pi} \)
+	\item Funzione di direttività \(f(\theta, \phi) = \sin^2(\theta) \)
+	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \) 
+	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
+	\item Resistenza di radiazione \( R_R = \dfrac{2}{3} \pi \eta_0 \left( \dfrac{l}{\lambda} \right) ^ 2 \)
+\end{itemize}
+
+\subsection{Spira magnetica}
+\textbf{Ipotesi:} incidenza perpendicolare, adattamento di polarizzazione
+\begin{itemize}
+	\item Lunghezza efficace \(l_e = l_m \dfrac{Z_{in}}{\eta_0}\)
+	\item Funzione di direttività \(f(\theta, \phi) = 1 \)
+	\item Tensione a vuoto \( V_0 = j \omega \mu \dfrac{E_{inc}}{\eta_0} S \) 
+	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
+	\item Resistenza di radiazione \( R_R = \eta_0 \dfrac{8 \pi^3}{3}\left( \dfrac{5}{\lambda^2} \right) ^ 2 \)
+	
+\end{itemize}
 \end{document}
