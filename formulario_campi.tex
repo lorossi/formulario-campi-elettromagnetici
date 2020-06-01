@@ -7,6 +7,10 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
+
 
 \geometry{left = 2 cm, right = 2 cm, bottom = 2 cm, top = 2 cm}
 \setlength{\parindent}{0em}
@@ -242,6 +246,26 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Velocità nell'onda \( v = \dfrac{1}{\sqrt{LC}} \)
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
 \end{itemize}
+
+\section{Linee TE in guida rettangolare}
+Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato della guida che giace sull'asse \(y\). Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
+\vspace{15pt}
+\begin{center}
+	\begin{tabular}{|Sc|Sc|Sc|}
+		\hline 
+		Modo & Lunghezza di taglio & Frequenza di taglio \\ 
+		\hline 	
+		\(TE_{10}\) & \(\lambda_c = 2a\) & \(f_c = \dfrac{c}{2a}\) \\ 
+		\hline 
+		\(TE_{01}\) & \(\lambda_c = 2b\) & \(f_c = \dfrac{c}{2b}\) \\ 
+		\hline 
+		\(TE_{20}\) & \(\lambda_c = a\) & \(f_c = \dfrac{c}{a}\) \\ 
+		\hline 
+		\(TE_{02}\) & \(\lambda_c = b\) & \(f_c = \dfrac{c}{b}\) \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+\vspace{5pt}
 
 \section{Adattamento di potenza}
 \begin{itemize}
