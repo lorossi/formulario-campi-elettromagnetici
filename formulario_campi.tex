@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{cellspace}
+\usepackage{setspace}
 \setlength\cellspacetoplimit{4pt}
 \setlength\cellspacebottomlimit{4pt}
 
@@ -16,31 +17,126 @@
 \setlength{\parindent}{0em}
 \hypersetup{
 	colorlinks=true,
-	urlcolor=blue
+	urlcolor=blue,
+    colorlinks,
+    linkcolor={black},
+    citecolor={black}
 }
 
-\title{Formulario di Campi Elettromagnetici}
-\author{Lorenzo Rossi - lorenzo14.rossi@mail.polimi.it}
-\date{AA 2019/2020}
+\pagestyle{plain}
+\pagenumbering{gobble}
+
+\title{\Huge Formulario di Campi Elettromagnetici}
+\author{\LARGE Lorenzo Rossi}
+\date{\LARGE Anno Accademico 2019/2020}
+
 
 \begin{document}
 \maketitle
 
-\section{Riguardo al formulario}
-Quest'opera è distribuita con Licenza Creative Commons - Attribuzione Non commerciale 4.0 Internazionale \ccbynceu  \newline
-Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso.
-Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici} link diretto \href{https://github.com/lorossi/formulario-campi-elettromagnetici/blob/master/formule_campi.pdf}{qua}. \newline 
+\vspace{18em}
 
-\section{Trigonometria}
+\large
+\begin{doublespacing}
+\centerline{Email: \href{mailto://lorenzo14.rossi@mail.polimi.it}{lorenzo14.rossi@mail.polimi.it}}
+\centerline{GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici}}
+
+\vspace{18em}
+\centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
+\centerline{Non commerciale 4.0 Internazionale \ccbynceu}
+\centerline{Versione aggiornata al 08/06/2020}
+\end{doublespacing}
+\newpage
+
+
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\newpage
+
+\section{Riguardo al formulario}
+Quest'opera è distribuita con Licenza Creative Commons \newline Attribuzione Non commerciale 4.0 Internazionale \ccbynceu \newline
+Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso. \newline
+Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici} \newline
+L'ultima versione può essere scaricata direttamente \href{https://github.com/lorossi/formulario-campi-elettromagnetici/blob/master/formulario_campi.pdf}{da questo link} premendo poi su "Download".
+
+\section{Richiami di base}
+\subsection{Trigonometria}
 \begin{itemize}
 	\item Teorema di Carnot \( a^2 = b^2 + c^2 - 2bc\cos(\alpha)\) con \(\alpha\) angolo compreso tra \(b\) e \(c\) 
 \end{itemize}
 
-\section{Numeri complessi}
+\subsection{Numeri complessi}
 \begin{itemize}
-	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} ( \cos{\dfrac{\theta + 2k\pi}{n}} + j \sin{\dfrac{\theta + 2 k \pi}{n}} ) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
+	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \\ \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} \left( \cos{\dfrac{\theta + 2k\pi}{n}} + j \sin{\dfrac{\theta + 2 k \pi}{n}} \right) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
 	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \dfrac{x + x^{*}}{2} \)
+	\item Inverso della parte reale: siano \(z = \alpha + j \beta \), \(y = \dfrac{1}{z} \rightarrow \operatorname{Re}(y) \neq \dfrac{1}{\alpha}\), \(\operatorname{Re}(y) = \operatorname{Re}\left(\dfrac{1}{z}\right) = \dfrac{\alpha}{\alpha^2 + \beta^2}\)
 \end{itemize}
+
+\subsection{Teoremi fondamentali}
+\begin{itemize}
+	\item Teorema di Stokes (rotore)
+	\begin{itemize}
+		\item Si applica a campi vettoriali su una linea chiusa orientabile ed orientata in modo coerente alla normale della superficie tramite regola della mano destra
+		\item \( \displaystyle \oint_s \vec{F} \cdot d\vec{l} = \iint_\Omega \nabla \cdot \vec{F} d\Omega \)
+	\end{itemize}	 
+	\item Teorema di Gauss (divergenza)
+	\begin{itemize}
+		\item Si applica ad un campo vettoriale su una superficie chiusa semplice ed orientata con bordo regolare \( \Omega \)
+		\item \( \displaystyle \iiint_V \nabla \cdot \vec{F} d\Omega = \iint_\Omega \vec{F} \cdot d\vec{S} = \iint_\Omega \left( \vec{F} \cdot \vec{n} \right) dS \)
+	\end{itemize}
+\end{itemize}
+
+\subsection{Sistemi di coordinate}
+\begin{itemize}
+	\item Coordinate cartesiane
+	\begin{itemize}
+		\item Elemento di spostamento infinitesimo \( dl = dx \vec{u_x} + dy \vec{u_y} + dz \vec{u_z} \)
+		\item Elemento di volume \( dV = dx dy dz \)
+	\end{itemize}
+	
+	\item Coordinate cilindriche
+	\begin{itemize}
+		\item Elemento di spostamento infinitesimo \( dl = d\rho \vec{u_\rho} + \rho d\phi \vec{u_\phi} + dz \vec{u_z} \)
+		\item Elemento di volume \( dV = \rho d\rho d\phi d_z\)
+	\end{itemize}
+	
+	\item Coordinate polari
+	\begin{itemize}
+		\item Elemento di spostamento infinitesimo \( dl = dr \vec{u_r} + R d\theta \vec{u_\theta} + R \sin\theta d\phi \vec{u_\phi} \)
+		\item Elemento di volume \( dV = R^2 \sin\theta d\theta d\phi dR \)
+	\end{itemize}
+\end{itemize}
+
+\subsection{Operatori differenziali}
+\begin{itemize}
+	\item Gradiente
+	\begin{itemize}
+		\item campo scalare \(\rightarrow\) campo vettoriale
+		\item \( \nabla \, F(x, y, z) = \dfrac{\partial F}{\partial x} \vec{u_x} +  \dfrac{\partial F}{\partial y} \vec{u_y} + \dfrac{\partial F}{\partial z} \vec{u_z}\)
+	\end{itemize}
+	\item Divergenza
+	\begin{itemize}
+		\item 
+		\item \( \nabla \cdot \vec{F}(x, y, z) = \dfrac{\partial F_x}{\partial x} +  \dfrac{\partial F_y}{\partial y} + \dfrac{\partial F_x}{\partial z} \)
+	\end{itemize}
+	\item Rotore
+	\begin{itemize}
+		\item campo vettoriale \(\rightarrow\) campo vettoriale
+		\item \( \nabla \times \vec{F} = \left( \dfrac{\partial F_z}{\partial y} -  \dfrac{\partial F_y}{\partial z} \right) \vec{u_x} + \left( \dfrac{\partial F_c}{\partial z} -  \dfrac{\partial F_z}{\partial x} \right) \vec{u_y} + \left( \dfrac{\partial F_y}{\partial x} -  \dfrac{\partial F_x}{\partial y} \right) \vec{u_z} \)
+	\end{itemize}
+\end{itemize}
+
+\subsection{Equazioni di Maxwell nel vuoto}
+\begin{enumerate}
+	\item Legge di Gauss elettrica \( \nabla \cdot \vec{E} = \dfrac{\rho}{\epsilon_0} \)
+	\item Legge di Gauss magnetica \( \nabla \cdot \vec{B} = 0 \)
+	\item Legge di Faraday \( \nabla \times \vec{E} = - \dfrac{\partial \vec{B}}{\partial t} \)
+	\item Legge di Ampere-Maxwell \( \nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0 \dfrac{\partial \vec{E}}{\partial t} \)
+\end{enumerate}
+
+\newpage
 
 \section{Elettrostatica}
 \begin{itemize}
@@ -87,6 +183,7 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 	\item In un conduttore ideale, si ha \(\mu \rightarrow \infty\), \(\sigma \rightarrow \infty \)
 \end{itemize}
 
+\newpage
 
 \section{Magnetostatica}
 \begin{itemize}
@@ -96,12 +193,12 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 \subsection{Campo Magnetico}
 \begin{itemize}
 	\item Legge di Biot Savart (differenziale) \( \vec{dF_{12}} = \dfrac{\mu_0}{4 \pi} \dfrac{I_1 \vec{dl_1} \times [I_2 \vec{dl_2} \times \vec{a_{12}}] }{R^2} \)
-	\item Legge di Biot Savart (integrale) \( \vec{F_{12}} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{dl_1} \times [\vec{dl_2} \times \vec{a_{12}}]} {R^2} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{a_{12}} \cdot [\vec{dl} \cdot \vec{d2}]} {R^2} \), \(\vec{F_{12}} = - \vec{F{21}} \)
+	\item Legge di Biot Savart (integrale) \(\displaystyle \vec{F_{12}} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{dl_1} \times [\vec{dl_2} \times \vec{a_{12}}]} {R^2} = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint\limits_{c_1} \oint\limits_{c_2} \dfrac{\vec{a_{12}} \cdot [\vec{dl} \cdot \vec{d2}]} {R^2} \), \(\vec{F_{12}} = - \vec{F{21}} \)
 	\item Densità di flusso magnetico (differenziale) \( \vec{dB} = \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} \)
-	\item Densità di flusso magnetico (integrale) \( \vec{B} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
+	\item Densità di flusso magnetico (integrale) \(\displaystyle \vec{B} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
 	\item Campo magnetico \( \vec{H} = \dfrac{\vec{B}}{\mu_0} \)
 	\item Autoinduttanza magnetica \(\displaystyle L_{11} = \dfrac{\Phi{11}}{I_1} = \dfrac{\int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \dfrac{\mu I_1}{4 \pi} \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\displaystyle \Phi_{m, 11} = \dfrac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \dfrac{\mu}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2}) \cdot \vec{ds}\)
-	\item Mutua induttanza \(\displaystyle L_{21} = \dfrac{\mu}{4 \pi} \int\limits_{s_2} ( \int\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2} ) \cdot \vec{ds} \)
+	\item Mutua induttanza \(\displaystyle L_{21} = \dfrac{\mu}{4 \pi} \int\limits_{s_2} \left( \int\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2} \right) \cdot \vec{ds} \)
 	\item Energia del sistema \( W_m = \dfrac{1}{2} L_{11} I_1^2 \)
 	\item Densità di energia  \( w_m = \dfrac{1}{2} \vec{B} \cdot \vec{H} = \dfrac{1}{2} \mu H^2 \)
 \end{itemize}
@@ -119,16 +216,18 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 \subsubsection{Interfaccia tra due mezzi}
 \begin{itemize}
 	\item Componente tangenziale \( H_{2t} - H_{1t} = J_{sn} \), \( \dfrac{J_{2t}}{\sigma_2} = \dfrac{J_{1t}}{\sigma_1} \)
-	\item Componente normale \( H_{2n} = \dfrac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot (\vec{B_2} - \vec{B_1}) = 0 \), \( \rho_s = ( \epsilon_2 - \epsilon_1 \dfrac{\sigma_2}{\sigma_1}) E_{2n} \),  \( \rho_s = ( \epsilon_1 - \epsilon_2 \dfrac{\sigma_1}{\sigma_2}) E_{1n} \)
+	\item Componente normale \( H_{2n} = \dfrac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot \left(\vec{B_2} - \vec{B_1} \right) = 0 \), \( \rho_s = \left( \epsilon_2 - \epsilon_1 \dfrac{\sigma_2}{\sigma_1} \right) E_{2n} \),  \( \rho_s = \left( \epsilon_1 - \epsilon_2 \dfrac{\sigma_1}{\sigma_2} \right) E_{1n} \)
 \end{itemize}
 
 \subsection{Resistenza elettrica / Legge di Joule}
 \begin{itemize}
-	\item Resistenza \(\displaystyle  R = \dfrac{V}{I} = \dfrac{-\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{J} \cdot \vec{ds}} = \dfrac{1}{\sigma} \dfrac{\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\oint_s \vec{E} \cdot \vec{ds}} \)
+	\item Resistenza \(\displaystyle  R = \dfrac{V}{I} = \dfrac{\displaystyle-\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\displaystyle\oint_s \vec{J} \cdot \vec{ds}} = \dfrac{1}{\sigma} \dfrac{\displaystyle\int_{p_1}^{p_2} \vec{E} \cdot \vec{dl}}{\displaystyle \oint_s \vec{E} \cdot \vec{ds}} \)
 	\item Relazione tra resitenza e capacità \(R \cdot C = \dfrac{\epsilon}{\sigma} \leftrightarrow \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \)
 	\item Legge di Joule (differenziale) \( \dfrac{\partial P}{\partial \Omega} = \vec{E} \cdot \vec{J} \) detta anche potenza specifica
 	\item Legge di Joule (integrale) \(\displaystyle P = \int\limits_\Omega \vec{E} \cdot \vec{J} \; d\Omega \)
 \end{itemize}
+
+\newpage
 
 \section{Regime dinamico}
 \begin{itemize}
@@ -150,12 +249,14 @@ Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elet
 \begin{itemize}
 	\item Equazione di Helmoltz (onda piana uniforme senza perdite) \( \dfrac{\partial^2 E(z, t)}{\partial t^2} - \mu \epsilon \dfrac{\partial^2 E(z, t)}{\partial z^2} = 0\)
 	\item Equazione di Helmoltz (dominio dei fasori) \( \nabla^2 \vec{E} = \gamma^2 \vec{E} \)
-	\item Lunghezza d'onda \( \lambda = \dfrac{2 \pi}{\omega} = \dfrac{c}{f} \)	
+	\item Lunghezza d'onda nel vuoto \( \lambda = \dfrac{2 \pi}{\omega} = \dfrac{c}{f} \)	
+	\item Lunghezza d'onda nel mezzo \( \lambda = \dfrac{c}{f} \dfrac{1}{\sqrt{\mu \epsilon}} \)
 	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \newline \( \beta = costante\ di\ fase = \dfrac{2 \pi}{\lambda} \)
 	\item Velocità della luce (velocità di propagazione delle onde) \( c = \dfrac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
 	\item Impedenza intrinseca del mezzo \( \eta = \dfrac{E^+}{H^+} \)
 	\item Impedenza d'onda \( Z = \dfrac{E^+ - E^-}{H^+ - H^-} \)
 	\item Indice di rifrazione \( n = \dfrac{c}{v} = \sqrt{\epsilon_r \mu_r} \)
+	\item Densità di potenza trasportata \( |S| = \dfrac{1}{2} \dfrac{|\vec{E}|^2}{\eta} = \dfrac{1}{2} |\vec{H}|^2 \eta \)
 \end{itemize}
 
 \subsection{Polarizzazione}
@@ -201,7 +302,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \end{itemize}
 
 \subsection{Mezzi attraversati dalle onde}
-\subsection{Mezzo senza perdite}
+\subsubsection{Mezzo senza perdite}
 \begin{itemize}
 	\item \( \sigma = 0 \Rightarrow \gamma = j \omega \sqrt{\mu \epsilon} \Rightarrow \alpha = 0, \beta = \omega \sqrt{\mu \epsilon} \) 
 	\item \( \eta = \sqrt{\dfrac{\mu}{\epsilon}}  = 377 \, \Omega \)
@@ -210,7 +311,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Impedenza intrinseca del vuoto (dominio dei fasori) \( \dfrac{\vec{E^+}}{\vec{H^+}} = \dfrac{j \omega \mu}{\gamma} = \eta \), \(\dfrac{\vec{E^-}}{\vec{H^-}} = - \dfrac{j \omega \mu}{\gamma} = - \eta\) 
 \end{itemize}
 
-\subsection{Buon conduttore}
+\subsubsection{Buon conduttore}
 \begin{itemize}
 	\item \( \sigma >> \omega \epsilon \Rightarrow \gamma = \sqrt{-\omega^2 \mu \epsilon} \)
 	\item \( \eta = \dfrac{1+j}{sqrt{2}} \sqrt{\dfrac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
@@ -222,12 +323,34 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
 \end{itemize}
 
+\newpage
+
 \section{Linee TEM}
 \begin{itemize}
 	\item Equazione 1 \( \dfrac{\partial V(z, t)}{\partial z} = - \dfrac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
 	\item Equazione 2 \( \dfrac{\partial I(z, t)}{\partial z} = - \dfrac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
 	\item Uguaglianze \( \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \), \(L_0 C_0 = \mu_0 \epsilon_0  \)
 	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} \)
+\end{itemize}
+
+\subsection{Potenza ed energia in una linea}
+\begin{itemize}
+	\item Potenza disponibile \( P_D = \dfrac{|V_g|^2}{8 R_g} = P_D \)
+	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) \) 
+	\item Potenza sul carico (in funzione della corrente) \( P_L = \dfrac{1}{2} |V|^2  \operatorname{Re}(Y) \)
+	\item Potenza sul carico (in funzione della tensione) \( P_L = \dfrac{1}{2} |I|^2  \operatorname{Re}(Z) \)
+	\item Densità di energia trasmessa \( S_{tra} = S_{inc} \left( 1 - \left|\Gamma \right| ^ 2 \right) \) 
+\end{itemize}
+
+\subsection{Corrente e tensione in una linea non attenuativa}
+\begin{itemize}
+	\item Tensione \(|V_L| = \left| V^+(0) \right| \left|1 + \Gamma_L \right|\)
+	\item Corrente \(|I_L| = \left| I^+(0) \right| \left|1 - \Gamma_L \right|\)
+	\item Nel caso di un corto circuito:
+	\begin{itemize}
+		\item Tensione \( |V(d)| = |V(0)| \sin(\beta d) | \)
+		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
+	\end{itemize}
 \end{itemize}
 
 \subsection{Cavo coassiale}
@@ -246,6 +369,8 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Velocità nell'onda \( v = \dfrac{1}{\sqrt{LC}} \)
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
 \end{itemize}
+
+\newpage 
 
 \section{Linee TE in guida rettangolare}
 Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato della guida che giace sull'asse \(y\). Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
@@ -267,13 +392,6 @@ Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato dell
 \end{center}
 \vspace{5pt}
 
-\section{Adattamento di potenza}
-\begin{itemize}
-	\item Potenza disponibile \( P_D = \dfrac{|V_g|^2}{8 R_g} = P_D \)
-	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) \)   
-\end{itemize}
-
-\section{Guide d'onda rettangolari}
 \begin{itemize}
 	\item Pulsazione di taglio \( \omega_c = \dfrac{1}{\sqrt{\omega \epsilon}} \sqrt{\left( \dfrac{m \pi}{a}\right)^2 + \left( \dfrac{m \pi}{b} \right)^2 }\) con \(a\), \(b\) interi
 	\item Impedenza modale \( Z_{te} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{\omega_c}{\omega} \right) }} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{f_c}{f} \right) }} \)
@@ -283,6 +401,103 @@ Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato dell
 	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z_{te}} \)
 	\item Coefficiente di attenuazione \( \alpha = \dfrac{2 \pi}{\lambda_c} \sqrt{1 - \left( \dfrac{f}{f_c} \right) ^ 2} \)
 \end{itemize}
+
+
+\newpage
+
+\section{Adattamento di impedenza}
+L'obiettivo dell'adattamento di impedenza è portare la massima potenza disponibile sul carico \(P_L = P_D\) annullando quindi il coefficiente di riflessione \( (\Gamma = 0) \).
+
+\subsection{Strutture adattanti}
+Esistono 3 tipologie di strutture adattanti:\
+\begin{itemize}
+	\item Trasformatore \( \dfrac{\lambda}{4} \) - solo per carichi \textbf{reali}
+	\item Stub semplice - per carichi \textbf{reali} o \textbf{complessi}
+	\item Stub doppio - per carichi \textbf{reali} o \textbf{complessi}
+\end{itemize}
+
+\subsubsection{Trasformatore lambda-quarti}
+Funziona esclusivamente con carichi reali. \`E costituito da un pezzo di conduttore lungo un quarto della lunghezza d'onda \( \lambda \).
+Impedenza del trasformatore: \(Z_x = \sqrt{Z_{in} \cdot Z_L} \) con \(Z_{in}\) impedenza di ingresso e \(Z_L\) impedenza di carico.
+
+\subsubsection{Trasformatore lambda-quarti con neutralizzazione}
+Risolve il problema dell'impossibilità dei trasformatori lambda-quarti di adattare carichi complessi.
+\`E composto da un tratto di neutralizzazione lungo \(l_n\) e da un trasformatore lambda-quarti di impedenza \(Z_x\).
+Il tratto di neutralizzazione sarà necessario a trasformare in impedenza puramente reale il carico.
+Il trasformatore lambda-quarti adatterà l'impedenza al valore caratteristico.
+
+Operativamente, si dovrà:
+\begin{enumerate}
+	\item Normalizzare l'impedenza del carico \(Z_L\) all'impedenza caratteristica \(Z_C\) ottendendo \(\overline{Z_L}\)
+	\item Tracciare la circonferenza con centro in \(1\) e passante per \( \overline{Z_L} \)
+	\item Partendo da \(\overline{Z_L}\), ruotare in senso orario sulla circonferenza appena tracciata fino ad intersecare l'asse reale nel punto \(A\)
+	\item Il valore di \( l_n \), normalizzato alla lunghezza d'onda \( \lambda \), sarà letto come differenza tra il prolungamento del punto \(A\) sulla scala esterna della carta di Smith e medesimo prolungamento di \(\overline{Z_L}\)
+	\item Denormalizzare \(\overline{Z_L}\) per ottenere \(Z_L\)
+	\item Il valore dell'impedenza del trasformatore sarà data da \(Z_x = \sqrt{Z_{in} \cdot Z_L} \)
+\end{enumerate}
+
+\subsubsection{Stub semplice}
+Detto anche stub \textit{singolo}, è realizzato con un tratto di linea di trasmissione in \textit{c.c}. o in \textit{c.a} di lunghezza \(l_s\), opportunamente collegato in serie o in parallelo alla linea ad un tratto di distanza \(d_s\) dal carico.
+Esistono due tipi di stub semplice:
+\begin{enumerate}
+	\item Stub parallelo - si lavora con le ammettenze \( \overline{Y_L} = \dfrac{Y_L}{Y_C} = \dfrac{Z_C}{Z_L} \) 
+	\item Stub serie - si lavora con le impedenze \( \overline{Z_L} = \dfrac{Z_L}{Z_C} \)
+\end{enumerate}
+
+Si può cercare \(l_s\) in modo che dia origine ad un \textit{corto circuito} o a un \textit{circuito aperto}, mentre \(d_s\) potrà assumere un solo valore.
+\begin{enumerate}
+	\item Il \textit{circuito aperto} si troverà a destra dell'asse reale della carta di Smith
+	\item Il \textit{corto circuito} si troverà a sinistra dell'asse reale della carta di Smith
+\end{enumerate}
+La differenza tra stub in \textit{circuito aperto} e in \textit{corto circuito} sarà pari a mezzo giro sulla carta di Smith \(( l = \dfrac{\lambda}{4} )\). 
+
+Operativamente, per gli stub \textit{serie} si dovrà:
+\begin{enumerate}
+	\item Normalizzare l'impedenza del carico \(Z_L\) all'impedenza caratteristica \(Z_C\) (o impedenza di ingresso) ottendendo \(\overline{Z_L}\)
+	\item Segnare sulla carta di Smith il valore di \( \overline{Z_L} \)
+	\item Tracciare la circonferenza a modulo costante pari a \( \overline{Z_L} \)
+	\item Partendo da \(\overline{Z_L}\), ruotare in senso orario sulla circonferenza appena tracciata fino ad intersecare la circonferenza di raggio \(\dfrac{R_g}{Z_C}\) nel generico punto \(A\)
+	\item Il valore di \( d_s \), normalizzato alla lunghezza d'onda \( \lambda \), sarà letto come differenza tra il prolungamento del punto \(A\) sulla scala esterna della carta di Smith e medesimo prolungamento di \(\overline{Z_L}\)
+	\item Partendo da \(A\) si procede ruotando fino a \(Z = 0\) (per uno stub c.c.) o \( Z = \inf \) (per uno stub c.a.) nel generico punto \(B\)
+	\item Analogamente a quanto trovato per \( d_s \), la lunghezza dello stub sarà pari alla differenza tra il prolungamento del punto \(B\) e medesimo prolungamento di \(A\)  
+\end{enumerate}
+Il procedimento sarà analogo per gli stub \textit{parallelo} ma si dovrà lavorare con le ammettenze al posto delle impedenze.
+
+\subsubsection{Stub doppio}
+\`E una struttura adattante formata da due stub semplici di lunghezza \(l_1\) e \(l_2\) posti a distanza \(d_s\) (fissata) tra di loro. I due stub possono essere sia collegati in serie che in parallelo
+\begin{enumerate}
+	\item La lunghezza del primo stub (il più vicino al carico) è ricercata in modo da eguagliare la parte reale dell'impedenza carico a quella della linea
+	\item La lunghezza del secondo stub è ricercata in modo da annullare la parte immaginaria dell'impedenza di carico
+\end{enumerate}
+
+Operativamente, per gli stub \textit{parallelo} si dovrà
+\begin{enumerate}
+	\item Normalizzare l'ammettenza del carico \(Y_L\) all'impedenza caratteristica \(Y_C\) (o impedenza di ingresso) ottendendo \(\overline{Y_L}\)
+	\item Segnare sulla carta di Smith il valore di \(\overline{Y_L}\)
+	\item Tracciare la circonferenza a modulo costante pari a \(\overline{Y_L}\) \textit{"circonferenza di partenza"}
+	\item Rutotare la circonferenza di raggio \(\dfrac{R_g}{Z_C}\) in senso antiorario di un angolo pari a \(d_s\) attorno al suo centro \textit{"circonferenza di arrivo"}
+	\item Si trovano quindi 2 intersezioni tra la due circonferenze ed è necessario sceglierne uno \textit{"punto di partenza" \(A\)}
+	\item Tracciare la circonferenza con centro in \(1\) e passante per \(A\) e ruotare di una lunghezza pari a \(d_s\) fino ad arrivare al \textit{"punto di arrivo" \(B\)}
+	\item Calcolare le ammettenze dei due stub \(Y_{S1} = A - \overline{Y_L}\) e \(Y_{S2} = -\operatorname{Im}(B) \)
+	\item Le lunghezze dei due stub saranno quelle che portano i loro rispettivi valori di ammettenza tale da avere un c.c. \( Y = \inf \) o un c.a. \( Y = 0 \), dipendentemente dalla struttura che si sta cercando di realizzare
+\end{enumerate}
+Il procedimento sarà analogo per gli stub \textit{serie} ma si dovrà lavorare con le impedenze al posto delle ammettenze.
+\textbf{Nota:} generalmente \(d_s\) è un dato del problema.
+
+\subsection{Note sulla Carta di Smith}
+\begin{itemize}
+	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
+	\item 1 giro completo della carta corrisponde a \(0.5 \lambda\)
+	\item La carta di Smith può essere usata indifferentemente con impedenze e ammettenze
+	\item Ogni tacca sulla circonferenza esterna corrisponde a \( \dfrac{1}{500} = 0.002 \) di lambda.
+\end{itemize}
+
+\subsection{Potenza in una linea adattata}
+\begin{itemize}
+	\item Potenza al carico \(P_L = P_D = \dfrac{|V_g|^2}{8 R_g} \)
+	\item La potenza disponibile è uguale in qualsiasi punto della linea
+\end{itemize}
+\newpage
 
 \section{Antenne}
 \begin{itemize}
@@ -301,6 +516,7 @@ Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato dell
 	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \) 
 	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
 	\item Resistenza di radiazione \( R_R = \dfrac{2}{3} \pi \eta_0 \left( \dfrac{l}{\lambda} \right) ^ 2 \)
+	\item Campo elettrico irradiato (campo lontano) \( E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} \exp{-j \beta R}\) con \(\theta\) colatitudine e \(R\) distanza tra punto considerato e centro del dipolo
 \end{itemize}
 
 \subsection{Spira magnetica}
