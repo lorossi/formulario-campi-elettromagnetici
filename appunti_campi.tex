@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{verbatim}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\geometry{left = 2 cm, right = 2 cm, bottom = 2 cm, top = 2 cm}
+\setlength{\parindent}{0em}
+
+\title{Appunti di Campi Elettromagnetici}
+\author{Lorenzo Rossi}
+\date{AA 2019/2020}
+
+\begin{document}
+\maketitle
+\section{Operatori differenziali}
+
+\subsection{Gradiente}
+\`E un operatore definito su un \textbf{campo scalare} e da come risultato un \textbf{campo vettoriale} che punta alla direzione di maggior variazione del campo.
+\[ \nabla \; \Phi (x, y, z) = E_x(x, y, z) + E_y(x, y, z) + E_z(x, y, z) \]
+
+\subsection{Divergenza}
+\`E un operatore definito su un \textbf{campo vettoriale} e da come risultato un \textbf{campo scalare} che si annulla in presenza di sorgenti e:
+\begin{itemize}
+	\item \textbf{Positiva} in corrispondenza di sorgenti - nel caso di campo elettrostatico, una carica \textbf{positiva}
+	\item \textbf{Negativa} in corrispondenza di pozzi - nel caso di campo elettrostatico, una carica \textbf{negativa}
+\end{itemize}
+\[ \nabla \cdot \Phi (x, y, z) = \frac{\partial F_x(x, y, z)}{\partial x} + \frac{\partial F_y(x, y, z)}{\partial y} + \frac{\partial F_z(x, y, z)}{\partial z} \]
+
+\subsection{Rotore}
+\`E un operatore definito su un \textbf{campo vettoriale} in \( \mathbb{R} ^ 3 \) e da come risultato un \textbf{campo vettoriale} che indica la direzione ed il modulo dei vortici nel campo.
+\[ \nabla \times \Phi (x, y, z) = det  \begin{bmatrix} \bar{u_x} && \bar{u_y} && \bar{u_z} \\ \frac{\partial }{\partial x} && \frac{\partial }{\partial y} && \frac{\partial }{\partial z} \\ F_x && F_y && F_z  \end{bmatrix} = (\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}) \; \bar{u_x} + (\frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}) \; \bar{u_y} + (\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}) \; \bar{u_z} \]
+
+
+\section{Formule}
+
+\subsection{Condensatore}
+\begin{itemize}
+	\item \( C = \frac{Q}{V} = \frac{•}{•}
+\end{itemize}
+\end{document}
