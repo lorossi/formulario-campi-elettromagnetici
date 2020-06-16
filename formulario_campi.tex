@@ -44,7 +44,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 08/06/2020}
+\centerline{Versione aggiornata al 15/06/2020}
 \end{doublespacing}
 \newpage
 
@@ -71,7 +71,36 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 \begin{itemize}
 	\item Radice quadrata di numeri complessi \(z \in \mathbb{C}\), \\ \( z = \alpha + j \beta = r e^{j \theta} \rightarrow \sqrt{z} = \sqrt[n]{z} \left( \cos{\dfrac{\theta + 2k\pi}{n}} + j \sin{\dfrac{\theta + 2 k \pi}{n}} \right) \) \newline con \(k \in \{0, 1, \cdots, n-1 \} \)
 	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \dfrac{x + x^{*}}{2} \)
-	\item Inverso della parte reale: siano \(z = \alpha + j \beta \), \(y = \dfrac{1}{z} \rightarrow \operatorname{Re}(y) \neq \dfrac{1}{\alpha}\), \(\operatorname{Re}(y) = \operatorname{Re}\left(\dfrac{1}{z}\right) = \dfrac{\alpha}{\alpha^2 + \beta^2}\)
+	\item Inverso della parte reale: siano \(z = \alpha + j \beta \), \(y = \dfrac{1}{z} \rightarrow \operatorname{Re}(y) \neq \dfrac{1}{\alpha}\), \(\operatorname{Re}(y)  = \dfrac{\alpha}{\alpha^2 + \beta^2}\)
+\end{itemize}
+
+\subsection{Decibel e Neper}
+\begin{itemize}
+	\item Decibel
+	\begin{itemize}
+		\item Adimensionali
+		\begin{itemize}
+			\item Corrente, tensione, campo ... \( 20 \log\left(\dfrac{x}{x_0}\right) \)
+			\item Potenza, densità di potenza ... \( 10 \log\left(\dfrac{x}{x_0}\right) \)
+			\item \(x_0\) valore di riferimento
+		\end{itemize}
+		\item Potenza 
+		\begin{itemize}
+			\item \(1 dBw = 10 \log\left(\dfrac{P}{1w}\right) \)
+			\item \(1 dBm = 10 \log\left(\dfrac{P}{1mw}\right) \)
+		\end{itemize}
+		\item Tensione 
+		\begin{itemize}
+			\item \(1 dBv = 20 \log\left(\dfrac{P}{1v}\right) \)
+			\item \(1 dB \mu v = 20 \log\left(\dfrac{P}{1 \mu v}\right) \)
+		\end{itemize}
+	\end{itemize}
+	\item Neper: si usa il logaritmo naturale (\( \ln \)) al posto del logaritmo in base 10 (\(\log\)).
+	\item Conversione
+	\begin{itemize}
+		\item Neper \(\rightarrow\) Decibel \( \; \alpha_{db} = \alpha_{Np} \cdot 8.686 \)
+		\item Decibel\(\rightarrow\) Neper \( \; \alpha_{Np} = \dfrac{\alpha_{Db}}{8.686} \)
+	\end{itemize}
 \end{itemize}
 
 \subsection{Teoremi fondamentali}
@@ -331,14 +360,15 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Equazione 2 \( \dfrac{\partial I(z, t)}{\partial z} = - \dfrac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
 	\item Uguaglianze \( \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \), \(L_0 C_0 = \mu_0 \epsilon_0  \)
 	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} \)
+	\item Velocità di fase nel conduttore \( v = \dfrac{1}{\sqrt{LC}} \)
 \end{itemize}
 
 \subsection{Potenza ed energia in una linea}
 \begin{itemize}
 	\item Potenza disponibile \( P_D = \dfrac{|V_g|^2}{8 R_g} = P_D \)
-	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) \) 
-	\item Potenza sul carico (in funzione della corrente) \( P_L = \dfrac{1}{2} |V|^2  \operatorname{Re}(Y) \)
-	\item Potenza sul carico (in funzione della tensione) \( P_L = \dfrac{1}{2} |I|^2  \operatorname{Re}(Z) \)
+	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) = \dfrac{|V_g|^2}{8 R_g} P_D ( 1 - | \Gamma_L | ^ 2 ) \) 
+	\item Potenza sul carico (in funzione della tensione) \( P_L = \dfrac{1}{2} |V|^2  \operatorname{Re}(Y) \)
+	\item Potenza sul carico (in funzione della corrente) \( P_L = \dfrac{1}{2} |I|^2  \operatorname{Re}(Z) \)
 	\item Densità di energia trasmessa \( S_{tra} = S_{inc} \left( 1 - \left|\Gamma \right| ^ 2 \right) \) 
 \end{itemize}
 
@@ -346,27 +376,36 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \begin{itemize}
 	\item Tensione \(|V_L| = \left| V^+(0) \right| \left|1 + \Gamma_L \right|\)
 	\item Corrente \(|I_L| = \left| I^+(0) \right| \left|1 - \Gamma_L \right|\)
-	\item Nel caso di un corto circuito:
+	\item Nel caso di un corto circuito - \textit{come negli stub c.c.}:
 	\begin{itemize}
-		\item Tensione \( |V(d)| = |V(0)| \sin(\beta d) | \)
+		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 	\end{itemize}
 \end{itemize}
 
 \subsection{Cavo coassiale}
+\textbf{Ipotesi:} \(a = \) raggio interno, \(b = \) raggio esterno 
 \begin{itemize}
 	\item Capacità \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
 	\item Induttanza \( L = \dfrac{\mu_0}{2 \pi} \ln\left(\dfrac{b}{a}\right) \)
-	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \)
-	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'}\)
+	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \dfrac{Np}{m}\)
+	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'} \dfrac{Np}{m}\)
 	\item Impedenza \( Z_C = \sqrt{\dfrac{L}{C}} = \dfrac{\eta}{2 \pi} \ln\left(\dfrac{b}{a} \right) =  \dfrac{1}{2 \pi} \sqrt{\dfrac{\mu}{\epsilon}} \ln\left(\dfrac{b}{a}\right)\)
-	\item Resistenza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \), \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
-	\item Conduttanza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
+	\item Resistenza superficiale \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
+	\item Resistenza per unità di lunghezza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \)
+	\item Conduttanza per unità di lunghezza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
+\end{itemize}
+
+\subsection{Linea a striscia}
+\begin{itemize}
+	\item Capacità \( C = \epsilon_0 \epsilon_r \dfrac{w}{h} \)
+	\item Induttanza \( L = \mu_0 \dfrac{h}{w} \)
+	\item Ammettenza per unità di lunghezza \( g = \sigma_d \dfrac{\textnormal{Area}}{h}\)
+	\item Attenuazione dovuta al dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 \end{itemize}
 
 \section{Linee quasi TEM}
 \begin{itemize}
-	\item Velocità nell'onda \( v = \dfrac{1}{\sqrt{LC}} \)
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
 \end{itemize}
 
@@ -474,7 +513,7 @@ Operativamente, per gli stub \textit{parallelo} si dovrà
 \begin{enumerate}
 	\item Normalizzare l'ammettenza del carico \(Y_L\) all'impedenza caratteristica \(Y_C\) (o impedenza di ingresso) ottendendo \(\overline{Y_L}\)
 	\item Segnare sulla carta di Smith il valore di \(\overline{Y_L}\)
-	\item Tracciare la circonferenza a modulo costante pari a \(\overline{Y_L}\) \textit{"circonferenza di partenza"}
+	\item Tracciare la circonferenza a parte reale costante pari a \(\operatorname{Re}(\overline{Y_L}) \) \textit{"circonferenza di partenza"}
 	\item Rutotare la circonferenza di raggio \(\dfrac{R_g}{Z_C}\) in senso antiorario di un angolo pari a \(d_s\) attorno al suo centro \textit{"circonferenza di arrivo"}
 	\item Si trovano quindi 2 intersezioni tra la due circonferenze ed è necessario sceglierne uno \textit{"punto di partenza" \(A\)}
 	\item Tracciare la circonferenza con centro in \(1\) e passante per \(A\) e ruotare di una lunghezza pari a \(d_s\) fino ad arrivare al \textit{"punto di arrivo" \(B\)}
@@ -484,19 +523,40 @@ Operativamente, per gli stub \textit{parallelo} si dovrà
 Il procedimento sarà analogo per gli stub \textit{serie} ma si dovrà lavorare con le impedenze al posto delle ammettenze.
 \textbf{Nota:} generalmente \(d_s\) è un dato del problema.
 
-\subsection{Note sulla Carta di Smith}
-\begin{itemize}
-	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
-	\item 1 giro completo della carta corrisponde a \(0.5 \lambda\)
-	\item La carta di Smith può essere usata indifferentemente con impedenze e ammettenze
-	\item Ogni tacca sulla circonferenza esterna corrisponde a \( \dfrac{1}{500} = 0.002 \) di lambda.
-\end{itemize}
+\subsection{Linea attenuativa}
+Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea attenuativa, bisogna
+\begin{enumerate}
+	\item Assicurarsi che il valore di \(\alpha\) sia espresso in \(\dfrac{N_p}{m}\)
+	\item Normalizzare l'impedenza del carico \(Z_L\) all'impedenza caratteristica \(Z_C\) (o impedenza di ingresso) ottendendo \(\overline{Z_L}\)
+	\item Tracciare la circonferenza con centro in \(1\) e passante per \( \overline{Z_L} \)
+	\item Partendo da \(\overline{Z_L}\), ruotare in senso orario sulla circonferenza appena tracciata fino a percorrere una lunghezza normalizzata alla lunghezza d'onda pari alla lunghezza della linea
+	\item Tracciare un segmento che congiunga il centro della carta di Smith con il punto appena trovato
+	\item Calcolare il modulo del coefficiente di riflessione \(\Gamma\) in corrispondenza del carico e riportarlo in corrispondenza del generatore moltiplicandolo per un fattore \(\;e^{-2 \alpha l}\)
+	\item Misurare sulla scala lineare più esterna della carta di Smith (con la dicitura \textit{TRASM. COEFF.}) una lunghezza \(l_\alpha\) pari al valore appena trovato
+	\item L'impedenza attenuata dalla linea (normalizzata) \(\overline{Z_{L_{att}}}\) sarà trovata sul segmento prima tracciato, a distanza \( l_\alpha\) dal centro
+	\item Denormalizzare il valore appena trovato per calcolare il valore effettivo di \( Z_{L_{att}} \)
+	\item Calcolare il nuovo coefficiente di riflessione \(\Gamma\) tra impedenza del generatore \(Z_g\) e impedenza attenuata del carico \(Z_{L_{att}}\)
+		
+\end{enumerate}
 
 \subsection{Potenza in una linea adattata}
 \begin{itemize}
 	\item Potenza al carico \(P_L = P_D = \dfrac{|V_g|^2}{8 R_g} \)
 	\item La potenza disponibile è uguale in qualsiasi punto della linea
 \end{itemize}
+
+\subsection{Tensione in uno stub c.c}
+La tensione avrà un massimo per \( l = \dfrac{\lambda}{4} \) e sarà nulla in \(l = 0\) (considerando un asse parallelo a \(l\) e nullo nel punto di c.c.). \\\
+Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
+
+\subsection{Note sulla Carta di Smith}
+\begin{itemize}
+	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
+	\item 1 giro completo della carta corrisponde a \(0.5 \lambda\)
+	\item La carta di Smith può essere usata indifferentemente con impedenze e ammettenze
+	\item Ogni tacca sulla circonferenza esterna corrisponde a \( \dfrac{1}{500} = 0.002 \) di lambda
+\end{itemize}
+
 \newpage
 
 \section{Antenne}
@@ -527,6 +587,52 @@ Il procedimento sarà analogo per gli stub \textit{serie} ma si dovrà lavorare 
 	\item Tensione a vuoto \( V_0 = j \omega \mu \dfrac{E_{inc}}{\eta_0} S \) 
 	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
 	\item Resistenza di radiazione \( R_R = \eta_0 \dfrac{8 \pi^3}{3}\left( \dfrac{5}{\lambda^2} \right) ^ 2 \)
-	
 \end{itemize}
+
+\subsection{Nastro di corrente}
+\textbf{Ipotesi:} \(l_g = \) lunghezza fisica 
+\begin{itemize}
+	\item Lunghezza magnetica \( l_m = l_g \)
+	\item Induttanza \( L = \mu_0 \dfrac{S}{l_g} \)
+\end{itemize}
+
+\subsection{Solenoide}
+\textbf{Ipotesi:} \(l_g = \) lunghezza fisica, \(N\) spire su \(l_g\) 
+\begin{itemize}
+	\item Lunghezza magnetica \(l_m = \dfrac{l_g}{N} \)
+	\item Induttanza \( L = \mu_0 N^2 \dfrac{S^2}{l_g} \)
+\end{itemize}
+
+\subsection{Confronto tra spira e solenoide}
+\vspace{15pt}
+\begin{center}
+	\begin{tabular}{|Sc|Sc|Sc|}
+		\hline 
+		\textbf{in TX} & \textit{Spira} & \textit{Solenoide} \\ 
+		\hline 	
+		campo elettrico & \(E_0\) & \(N \cdot E_0\) \\ 
+		\hline 
+		campo magnetico & \(H_0\) & \(N \cdot H_0\) \\ 
+		\hline 
+		densità di potenza & \(S_0 = \dfrac{|E_0|^2}{2 \eta_0}\) & \(S_0 = \dfrac{|E|^2}{2 \eta_0} = N^2 S_0\) \\ 
+		\hline 
+		\(P_T\) & \(P_0\) & \(N^2 \cdot P_0\) \\ 
+		\hline 
+		\(R_R\) & \(R_{R0}\) & \(N^2 \cdot R_{R0}\)\\
+		\hline
+	\end{tabular} 
+\end{center}
+\vspace{5pt}
+\begin{center}
+	\begin{tabular}{|Sc|Sc|Sc|}
+		\hline 
+		\textbf{in RX} & \textit{Spira} & \textit{Solenoide} \\ 
+		\hline 	
+		tensione a vuoto & \(V_0\) & \(N \cdot V_0\) \\ 
+		\hline 
+		potenza disponibile & \(P_{D0}\) & \(P_{D0}\) \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+\vspace{5pt}
 \end{document}
