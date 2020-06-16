@@ -12,7 +12,6 @@
 \setlength\cellspacetoplimit{4pt}
 \setlength\cellspacebottomlimit{4pt}
 
-
 \geometry{left = 2 cm, right = 2 cm, bottom = 2 cm, top = 2 cm}
 \setlength{\parindent}{0em}
 \hypersetup{
@@ -58,8 +57,8 @@
 \newpage
 
 \section{Riguardo al formulario}
-Quest'opera è distribuita con Licenza Creative Commons \newline Attribuzione Non commerciale 4.0 Internazionale \ccbynceu \newline
-Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso. \newline
+Quest'opera è distribuita con Licenza Creative Commons - Attribuzione Non commerciale 4.0 Internazionale \ccbynceu \newline
+Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso (o finché non verrà ritenuto completo). \newline
 Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici} \newline
 L'ultima versione può essere scaricata direttamente \href{https://github.com/lorossi/formulario-campi-elettromagnetici/blob/master/formulario_campi.pdf}{da questo link} premendo poi su "Download".
 
@@ -67,6 +66,36 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 \subsection{Trigonometria}
 \begin{itemize}
 	\item Teorema di Carnot \( a^2 = b^2 + c^2 - 2bc\cos(\alpha)\) con \(\alpha\) angolo compreso tra \(b\) e \(c\) 
+	\item Formule di duplicazione
+	\begin{itemize}
+		\item Seno \(\sin(2x) = 2 \sin(x) \cos(x) \), \(sin^2(x) = \dfrac{1 - \cos(2x)}{2} \)
+		\item Coseno \( \cos(2x) = 1 - 2 \sin^2(x) = 2 \cos^2(x) - 1\), \(cos^2(x) = \dfrac{1 + \cos(2x)}{2} \)
+	\end{itemize}
+	\item Formule di addizione
+	\begin{itemize}
+		\item Seno \( \sin(\alpha \pm \beta ) = \sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)\)
+		\item Coseno \( \cos(\alpha \pm \beta ) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)\)
+		\item Tangente \(\tan(\alpha \pm \beta ) = \dfrac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha) \tan(\beta)} \)
+	\end{itemize}
+	\item Formule di Werner
+	\begin{itemize}
+		\item \( \sin(\alpha) \sin(\beta) = \dfrac{1}{2} \left[ \cos(\alpha - \beta) - \cos(\alpha + \beta) \right] \)
+		\item \( \cos(\alpha) \cos(\beta) = \dfrac{1}{2} \left[ \cos(\alpha + \beta) + \cos(\alpha - \beta) \right] \)
+		\item \( \sin(\alpha) \cos(\beta) = \dfrac{1}{2} \left[ \sin(\alpha + \beta) + \sin(\alpha - \beta) \right] \)
+	\end{itemize}
+	\item Formule di bisezione
+	\begin{itemize}
+		\item Seno \( \sin\left( \dfrac{x}{2} \right) = \sqrt{\dfrac{1 - \cos(x)}{2}} \)
+		\item Coseno  \( \cos\left( \dfrac{x}{2} \right) = \sqrt{\dfrac{1 + \cos(x)}{2}} \)
+		\item Tangente \( \tan\left( \dfrac{x}{2} \right) = \sqrt{\dfrac{1 - \cos(x)}{1 + \cos(x)}} = \dfrac{1 - \cos(x)}{\sin(x)} = \dfrac{\sin(x)}{1 + \cos(x)} \)
+	\end{itemize}
+	\item Approssimazioni
+	\begin{itemize}
+		\item \textbf{Ipotesi:} \( \theta \rightarrow 0 \)
+		\item Seno \( \sin(\theta) \approx \theta \)
+		\item Coseno \( \cos(\theta) \approx 1 - \dfrac{\theta^2}{2} \)
+		\item Tangente \( \tan(\theta) \approx \theta\)
+	\end{itemize}
 \end{itemize}
 
 \subsection{Numeri complessi}
@@ -109,6 +138,8 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 		\item Decibel\(\rightarrow\) Neper \( \; \alpha_{Np} = \dfrac{\alpha_{Db}}{8.686} \)
 	\end{itemize}
 \end{itemize}
+
+\newpage 
 
 \subsection{Teoremi fondamentali}
 \begin{itemize}
@@ -154,7 +185,7 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 	\end{itemize}
 	\item Divergenza
 	\begin{itemize}
-		\item 
+		\item campo vettoriale \(\rightarrow\) campo scalare
 		\item \( \nabla \cdot \vec{F}(x, y, z) = \dfrac{\partial F_x}{\partial x} +  \dfrac{\partial F_y}{\partial y} + \dfrac{\partial F_x}{\partial z} \)
 	\end{itemize}
 	\item Rotore
@@ -233,7 +264,7 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 	\item Densità di flusso magnetico (differenziale) \( \vec{dB} = \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} \)
 	\item Densità di flusso magnetico (integrale) \(\displaystyle \vec{B} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{I_2 \vec{dl_2} \times \vec{a_{12}}}{R^2} = \oint\limits_{c_2} \dfrac{\mu_0}{4 \pi} \dfrac{\vec{J} \cdot ( \vec{dl_{1}} \cdot \vec{dl_2} )}{R^2}\)
 	\item Campo magnetico \( \vec{H} = \dfrac{\vec{B}}{\mu_0} \)
-	\item Autoinduttanza magnetica \(\displaystyle L_{11} = \dfrac{\Phi{11}}{I_1} = \dfrac{\int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \dfrac{\mu I_1}{4 \pi} \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\displaystyle \Phi_{m, 11} = \dfrac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \dfrac{\mu}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2}) \cdot \vec{ds}\)
+	\item Autoinduttanza magnetica \(L_{11} = \dfrac{\Phi{11}}{I_1} = \dfrac{\displaystyle  \int_{S_1} \vec{B_1} \cdot \vec{dd_1}}{I_1} \) con \( \vec{B_1} = \dfrac{\mu I_1}{4 \pi} \displaystyle \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{ar}}{R^2} \), \(\displaystyle \Phi_{m, 11} = \dfrac{\mu I_1}{4 \pi} \int\limits_{s_1} ( \oint\limits_{c1} \dfrac{\vec{dl} \cdot \vec{a_r}}{R^2}) ds \linebreak \Rightarrow L_{11} = \dfrac{\mu}{4 \pi} \displaystyle\int\limits_{s_1} \left( \oint\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2} \right) \cdot \vec{ds}\)
 	\item Mutua induttanza \(\displaystyle L_{21} = \dfrac{\mu}{4 \pi} \int\limits_{s_2} \left( \int\limits_{c_1} \dfrac{\vec{dl} \times \vec{a_r}}{R^2} \right) \cdot \vec{ds} \)
 	\item Energia del sistema \( W_m = \dfrac{1}{2} L_{11} I_1^2 \)
 	\item Densità di energia  \( w_m = \dfrac{1}{2} \vec{B} \cdot \vec{H} = \dfrac{1}{2} \mu H^2 \)
@@ -242,7 +273,12 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 \subsubsection{Campo Magnetico nei materiali}
 \begin{itemize}
 	\item Momento di dipolo magnetico \( \vec{m} = A \cdot I \cdot \vec{a_n} \)
-	\item Densità di momento magnetico \(\vec{M} = \lim\limits_{\Delta\Omega \rightarrow 0} \dfrac{\sum_i \vec{m_i}}{\Delta\Omega}\) se il mezzo è lineare \( \vec{M} = \chi_m \vec{H} \) con \(\chi_m\) detta suscettività magnetica
+	\item Densità di momento magnetico
+	\begin{itemize}
+		\item Mezzo qualsiasi \(\vec{M} = \lim\limits_{\Delta\Omega \rightarrow 0} \dfrac{\sum_i \vec{m_i}}{\Delta\Omega}\)
+		\item Se il mezzo è lineare \( \vec{M} = \chi_m \vec{H} \)
+		\item \(\chi_m\) è detta suscettività magnetica
+	\end{itemize}
 	\item Permeabilità del mezzo \( \mu = \mu_0 \mu_r = \mu_0 (1 + \chi_m) \)
 	\item Relazione tra \( \vec{H} \) e \( \vec{M} \): \( \vec{B} = \mu \vec{H} = \mu_0 \mu_r \vec{H} = \mu_0 (1 + \chi_m) \vec{H} = \mu_0 (\vec{H} + \vec{M}) \)
 \end{itemize}
@@ -252,7 +288,8 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 \subsubsection{Interfaccia tra due mezzi}
 \begin{itemize}
 	\item Componente tangenziale \( H_{2t} - H_{1t} = J_{sn} \), \( \dfrac{J_{2t}}{\sigma_2} = \dfrac{J_{1t}}{\sigma_1} \)
-	\item Componente normale \( H_{2n} = \dfrac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot \left(\vec{B_2} - \vec{B_1} \right) = 0 \), \( \rho_s = \left( \epsilon_2 - \epsilon_1 \dfrac{\sigma_2}{\sigma_1} \right) E_{2n} \),  \( \rho_s = \left( \epsilon_1 - \epsilon_2 \dfrac{\sigma_1}{\sigma_2} \right) E_{1n} \)
+	\item Componente normale \( H_{2n} = \dfrac{\mu_1}{\mu_2} H_{1n} \), \(B_{2n} = B_{1n}\), \( \vec{a_n} \cdot \left(\vec{B_2} - \vec{B_1} \right) = 0 \), \( \rho_s = \left( \epsilon_2 - \epsilon_1 \dfrac{\sigma_2}{\sigma_1} \right) E_{2n} \)
+	\item Densità superficiale di carica \( \rho_s = \left( \epsilon_1 - \epsilon_2 \dfrac{\sigma_1}{\sigma_2} \right) E_{1n} \)
 \end{itemize}
 
 \subsection{Resistenza elettrica / Legge di Joule}
@@ -287,7 +324,11 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 	\item Equazione di Helmoltz (dominio dei fasori) \( \nabla^2 \vec{E} = \gamma^2 \vec{E} \)
 	\item Lunghezza d'onda nel vuoto \( \lambda = \dfrac{2 \pi}{\omega} = \dfrac{c}{f} \)	
 	\item Lunghezza d'onda nel mezzo \( \lambda = \dfrac{c}{f} \dfrac{1}{\sqrt{\mu \epsilon}} \)
-	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove \( \alpha = costante\ di\ attenuazione > 0\), \newline \( \beta = costante\ di\ fase = \dfrac{2 \pi}{\lambda} \)
+	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove:
+	\begin{itemize}
+		\item \( \alpha = \textnormal{costante di attenuazione} > 0\)
+		\item \( \beta = \textnormal{costante di fase} = \dfrac{2 \pi}{\lambda} \)
+	\end{itemize}
 	\item Velocità della luce (velocità di propagazione delle onde) \( c = \dfrac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
 	\item Impedenza intrinseca del mezzo \( \eta = \dfrac{E^+}{H^+} \)
 	\item Impedenza d'onda \( Z = \dfrac{E^+ - E^-}{H^+ - H^-} \)
@@ -390,6 +431,8 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 	\end{itemize}
 \end{itemize}
+
+\newpage
 
 \subsubsection{Cavo coassiale}
 \textbf{Ipotesi:} \(a = \) raggio interno, \(b = \) raggio esterno 
@@ -613,6 +656,8 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 		\item I campi sono diretti come \( \overline{u_\theta} \)
 	\end{itemize}
 \end{itemize}
+
+\newpage 
 
 \subsection{Spira magnetica}
 \textbf{Ipotesi:} incidenza perpendicolare, adattamento di polarizzazione
