@@ -37,14 +37,16 @@
 \vspace{18em}
 
 \large
-\begin{doublespacing}
+\begin{doublespacing}\hypersetup{
+	urlcolor=black,
+}\urlstyle{same}
 \centerline{Email: \href{mailto://lorenzo14.rossi@mail.polimi.it}{lorenzo14.rossi@mail.polimi.it}}
-\centerline{GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici}}
+\centerline{GitHub: \url{https://github.com/lorossi}}
 
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 15/06/2020}
+\centerline{Versione aggiornata al 16/06/2020}
 \end{doublespacing}
 \newpage
 
@@ -80,9 +82,9 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 	\begin{itemize}
 		\item Adimensionali
 		\begin{itemize}
-			\item Corrente, tensione, campo ... \( 20 \log\left(\dfrac{x}{x_0}\right) \)
-			\item Potenza, densità di potenza ... \( 10 \log\left(\dfrac{x}{x_0}\right) \)
-			\item \(x_0\) valore di riferimento
+			\item Corrente, tensione, campo, ... \( x_{dB} = 20 \log\left(\dfrac{x}{x_0}\right) \)
+			\item Potenza, densità di potenza, ... \( x_{dB} = 10 \log\left(\dfrac{x}{x_0}\right) \)
+			\item \(x_0\) è un valore di riferimento
 		\end{itemize}
 		\item Potenza 
 		\begin{itemize}
@@ -93,6 +95,11 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 		\begin{itemize}
 			\item \(1 dBv = 20 \log\left(\dfrac{P}{1v}\right) \)
 			\item \(1 dB \mu v = 20 \log\left(\dfrac{P}{1 \mu v}\right) \)
+		\end{itemize}
+		\item Rumore
+		\begin{itemize}
+			\item \(P_S - P_C = 10 log \left( \dfrac{S}{C} \right) \)
+			\item \(S\) segnale di rumore, \(C\) onda portante (carrier), \(P_S\) e \(P_C)\) le loro rispettive potenze
 		\end{itemize}
 	\end{itemize}
 	\item Neper: si usa il logaritmo naturale (\( \ln \)) al posto del logaritmo in base 10 (\(\log\)).
@@ -354,7 +361,8 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 
 \newpage
 
-\section{Linee TEM}
+\section{Linee di trasmissione}
+\subsection{Linee TEM}
 \begin{itemize}
 	\item Equazione 1 \( \dfrac{\partial V(z, t)}{\partial z} = - \dfrac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
 	\item Equazione 2 \( \dfrac{\partial I(z, t)}{\partial z} = - \dfrac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
@@ -363,7 +371,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Velocità di fase nel conduttore \( v = \dfrac{1}{\sqrt{LC}} \)
 \end{itemize}
 
-\subsection{Potenza ed energia in una linea}
+\subsubsection{Potenza ed energia in una linea}
 \begin{itemize}
 	\item Potenza disponibile \( P_D = \dfrac{|V_g|^2}{8 R_g} = P_D \)
 	\item Potenza sul carico \( P_L = P_D ( 1 - | \Gamma_L | ^ 2 ) = \dfrac{|V_g|^2}{8 R_g} P_D ( 1 - | \Gamma_L | ^ 2 ) \) 
@@ -372,7 +380,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Densità di energia trasmessa \( S_{tra} = S_{inc} \left( 1 - \left|\Gamma \right| ^ 2 \right) \) 
 \end{itemize}
 
-\subsection{Corrente e tensione in una linea non attenuativa}
+\subsubsection{Corrente e tensione in una linea non attenuativa}
 \begin{itemize}
 	\item Tensione \(|V_L| = \left| V^+(0) \right| \left|1 + \Gamma_L \right|\)
 	\item Corrente \(|I_L| = \left| I^+(0) \right| \left|1 - \Gamma_L \right|\)
@@ -383,7 +391,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\end{itemize}
 \end{itemize}
 
-\subsection{Cavo coassiale}
+\subsubsection{Cavo coassiale}
 \textbf{Ipotesi:} \(a = \) raggio interno, \(b = \) raggio esterno 
 \begin{itemize}
 	\item Capacità \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
@@ -396,7 +404,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Conduttanza per unità di lunghezza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
 \end{itemize}
 
-\subsection{Linea a striscia}
+\subsubsection{Linea a striscia}
 \begin{itemize}
 	\item Capacità \( C = \epsilon_0 \epsilon_r \dfrac{w}{h} \)
 	\item Induttanza \( L = \mu_0 \dfrac{h}{w} \)
@@ -404,14 +412,14 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Attenuazione dovuta al dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 \end{itemize}
 
-\section{Linee quasi TEM}
+\subsection{Linee quasi TEM}
 \begin{itemize}
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
 \end{itemize}
 
 \newpage 
 
-\section{Linee TE in guida rettangolare}
+\subsection{Linee TE in guida rettangolare}
 Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato della guida che giace sull'asse \(y\). Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
 \vspace{15pt}
 \begin{center}
@@ -552,9 +560,28 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 \subsection{Note sulla Carta di Smith}
 \begin{itemize}
 	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
-	\item 1 giro completo della carta corrisponde a \(0.5 \lambda\)
 	\item La carta di Smith può essere usata indifferentemente con impedenze e ammettenze
 	\item Ogni tacca sulla circonferenza esterna corrisponde a \( \dfrac{1}{500} = 0.002 \) di lambda
+	\item 1 giro completo della carta corrisponde a \(0.5 \lambda\). Altri valori tipici:
+	\vspace{5pt}
+	\begin{center}
+		\begin{tabular}{|Sc|Sc|Sc|}
+			\hline 
+			\textit{Lunghezza} & \textit{Frazione} & \textit{Rotazione} \\ 
+			\hline 	
+			\(0.125 \lambda\) & \(\dfrac{\lambda}{8}\) & \(90^\circ\) \\ 
+			\hline 
+			\(0.1\overline{6} \lambda\) & \(\dfrac{\lambda}{6}\) & \(120^\circ\) \\ 
+			\hline 
+			\(0.25 \lambda\) & \(\dfrac{\lambda}{4}\) & \(180^\circ\) \\ 
+			\hline 
+			\(0.\overline{3} \lambda\) & \(\dfrac{\lambda}{3}\) &\(240^\circ\) \\
+			\hline
+			\(0.5 \lambda\) & \(\dfrac{\lambda}{2}\) & \(360^\circ\) \\ 
+			\hline 
+		\end{tabular} 
+	\end{center}
+	\vspace{5pt}
 \end{itemize}
 
 \newpage
@@ -574,9 +601,17 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 	\item Area efficace \(A_e = \dfrac{3}{8} \dfrac{\lambda^2}{\pi} \)
 	\item Funzione di direttività \(f(\theta, \phi) = \sin^2(\theta) \)
 	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \) 
-	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
 	\item Resistenza di radiazione \( R_R = \dfrac{2}{3} \pi \eta_0 \left( \dfrac{l}{\lambda} \right) ^ 2 \)
-	\item Campo elettrico irradiato (campo lontano) \( E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} \exp{-j \beta R}\) con \(\theta\) colatitudine e \(R\) distanza tra punto considerato e centro del dipolo
+	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
+	\item Potenza trasmessa \( P_T = \dfrac{\pi}{3} \eta \left| I \right| ^2 \left(\dfrac{l}{\lambda} \right) ^ 2 \)
+	\item Campi irradiati (campi lontani)
+	\begin{itemize}
+		\item \textbf{Ipotesi} \(\theta\) colatitudine, \(R\) distanza tra punto considerato e centro del dipolo
+		\item Campo elettrico \(E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} e^{-j \beta R} \sin\theta\) 
+		\item Campo magnetico \(H_\theta = \dfrac{j \omega j \mu I l}{4 \pi R \eta} e^{-j \beta R} \sin\theta\) 
+		\item \( \dfrac{E_\theta}{H_\theta} = \eta \)
+		\item I campi sono diretti come \( \overline{u_\theta} \)
+	\end{itemize}
 \end{itemize}
 
 \subsection{Spira magnetica}
