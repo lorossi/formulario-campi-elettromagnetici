@@ -362,14 +362,24 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \end{itemize}
 
 \subsubsection{Incidenza non normale}
-\textbf{Ipotesi:} onda su piano \(xz\)
+\textbf{Ipotesi:} onda su piano \(xz\). Può essere scomposta in componente TE e TM (per sovrapposizione lineare).
 \begin{itemize}
-	\item Impedenza TE \( \eta^{TE}_n = \dfrac{\eta}{cos(\theta_n)} \)
-	\item Impedenza TM \( \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
-	\item Componente TE dell'onda ha componente \(y\)
-	\item Componente TE dell'onda ha componenti \(xz\)
+	\item Componente TE
+	\begin{itemize}
+		\item Ha componente \(y\)
+		\item Impedenza \( \eta^{TE}_n = \dfrac{\eta}{cos(\theta_n)} \)
+		\item Coefficiente di riflessione \( \Gamma = \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
+	\end{itemize}
+	\item Componente TM
+	\begin{itemize}
+		\item Ha componenti \(xz\)
+		\item Impedenza \( \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
+		\item Coefficiente di riflessione \( \Gamma = - \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
+	\end{itemize}
+\end{itemize}
+\begin{itemize}
 	\item Angolo di incidenza \( \theta = \arctan\left( \dfrac{\beta_z}{\beta_x} \right) \)
-	\item Costante di propagazione \(\gamma \rightarrow\) va proiettata nelle direzioni \(x\) e \(y\) tramite \(\sin\) e \(\cos\)
+	\item La costante di propagazione \(\gamma \rightarrow\) va proiettata nelle direzioni \(x\) e \(y\) tramite \(\sin\) e \(\cos\)
 \end{itemize}
 
 \subsubsection{Trasmissione totale}
