@@ -7,6 +7,7 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{xfrac}
 \usepackage{cellspace}
 \usepackage{setspace}
 \setlength\cellspacetoplimit{4pt}
@@ -45,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 16/06/2020}
+\centerline{Versione aggiornata al 26/06/2020}
 \end{doublespacing}
 \newpage
 
@@ -60,7 +61,7 @@
 Quest'opera è distribuita con Licenza Creative Commons - Attribuzione Non commerciale 4.0 Internazionale \ccbynceu \newline
 Questo formulario verrà espanso (ed, eventualmente, corretto) periodicamente fino a fine corso (o finché non verrà ritenuto completo). \newline
 Link repository di GitHub: \url{https://github.com/lorossi/formulario-campi-elettromagnetici} \newline
-L'ultima versione può essere scaricata direttamente \href{https://github.com/lorossi/formulario-campi-elettromagnetici/blob/master/formulario_campi.pdf}{da questo link} premendo poi su "Download".
+L'ultima versione può essere scaricata direttamente cliccando \href{https://github.com/lorossi/formulario-campi-elettromagnetici/raw/master/formulario_campi.pdf}{su questo link.}
 
 \section{Richiami di base}
 \subsection{Trigonometria}
@@ -202,6 +203,51 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 	\item Legge di Faraday \( \nabla \times \vec{E} = - \dfrac{\partial \vec{B}}{\partial t} \)
 	\item Legge di Ampere-Maxwell \( \nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0 \dfrac{\partial \vec{E}}{\partial t} \)
 \end{enumerate}
+
+\newpage
+
+\section{Metodo delle cariche immagine}
+Il vantaggio di questo metodo è la semplicità della sua applicazione rispetto alla più analiticamente dispendiosa sovrapposizione degli effetti.
+Per calcolare il campo elettrico di una carica (o più) in un punto del piano, in presenza di un conduttore, si dovrà
+\begin{enumerate}
+	\item Chiudere la superficie piana del conduttore all'infinito includendo il semispazio comprendente la carica sorgente. Sulla superficie che racchiude questa regione di spazio, il potenziale sarà nullo.
+	\item Si considera una o più cariche simmetriche (rispetto al conduttore) alla carica in esame.
+	\item Si calcola il potenziale in un generico punto \(P\).
+	\item Si impongono le condizioni al contorno. \textit{(ad es. il potenziale sarà nullo sulla superficie del conduttore)}
+	\item Si calcola il campo elettrico applicando \textit{il teorema di Gauss.}
+\end{enumerate}
+Grazie al \textit{teorema dell'unicità della soluzione}, è possibile affermare che la soluzione al problema elettrostatico sarà valida all'interno della superficie di spazio considerata.
+
+\subsection{Caso particolare: sfera conduttrice e carica a distanza}
+\textbf{Ipotesi:} la sfera ha raggio \(R\), la carica è disposta a distanza \(d\) ed ha valore \(q\).
+
+Prima di tutto bisogna introdurre, all'interno della sfera, una carica \(Q'  = -\dfrac{R}{d} \cdot q\) a distanza \( D = \dfrac{R^2}{d}\) dal centro della circonferenza. \textbf{Questo passo è sufficiente se la sfera ha potenziale mantenuto costante.} 
+
+Se così non fosse, si distinguono 2 diversi scenari:
+\begin{enumerate}
+	\item Sfera mantenuta a potenziale fisso \(V_0\):
+		\begin{itemize}
+			\item Bisogna considerare, al centro della sfera, una nuova carica \(Q^{'}\) che faccia assumere tale potenziale alla stessa.
+			\item Il valore della nuova carica sarà quindi \(Q^{'} = 4 \pi \epsilon R V_0\)
+		\end{itemize}
+		
+	\item Sfera isolata con carica iniziale \(Q_0\):
+	\begin{itemize}
+		\item Bisogna considerare una carica ulteriore \textit{(rispetto al caso della sfera mantenuta a potenziale fisso \(V_0\))} \(Q_0\) al centro della sfera che neutralizzi il valore di \(Q^{'}\).
+		\item Il la sfera assumerà un valore di tensione \(V = \dfrac{Q_0 - Q^{'}}{4 \pi \epsilon R} \)
+	\end{itemize}	 
+\end{enumerate}
+
+Nel caso si voglia calcolare la densità superficiale di carica sulla sfera, la formula per ricavarla è: 
+\[
+	\sigma(R, \theta) = \dfrac{q}{4 \pi R} \cdot \dfrac{R^2 - d^2}{\left(R^2 + d^2 - 2dR\cos\theta\right) ^ {\sfrac{3}{2}}}
+\]
+Con \(R\) raggio della sfera e \(\theta\) angolo formato tra l'asse orizzontale e il segmento che congiunge il centro della sfera alla sua superficie.
+
+\bigskip
+
+\textbf{IMPORTANTE} il \textit{Riva-Gentili}, nell'\textit{appendice A} (\textit{pag.} \(193\)) calcola in modo errato i valori di \(Q^{''}\) e di \(V\) negli scenari sopra indicati. Al denominatore, \(R\) ha esponente \(2\) anziché \(1\).
+
 
 \newpage
 
@@ -350,7 +396,12 @@ L'ultima versione può essere scaricata direttamente \href{https://github.com/lo
 \end{itemize}
 
 \subsection{Incidenza delle onde}
-
+Leggi di Snell:
+\begin{itemize}
+	\item Angolo di rifrazione \(n_1 \sin(\theta_1) = n_2 \sin(\theta_2) \)
+	\item Riflessione interna totale \(\theta_{\textnormal{crit}} = \arcsin\left( \dfrac{n_2}{n_1} \right) \)
+	\item Angolo di incidenza \(=\) angolo di riflessione
+\end{itemize}
 \subsubsection{Incidenza normale su discontinuità piana}
 Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e \( y \) nella sezione \( z = cost \)
 \begin{itemize}
@@ -362,7 +413,11 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \end{itemize}
 
 \subsubsection{Incidenza non normale}
-\textbf{Ipotesi:} onda su piano \(xz\). Può essere scomposta in componente TE e TM (per sovrapposizione lineare).
+\textbf{Ipotesi:} onda su piano \(xz\) \textit{destrorso} (asse \(x\) verticale, asse \(z\) orizzontale). Può essere scomposta in componente TE e TM (per sovrapposizione lineare).
+\begin{itemize}
+	\item L'angolo di incidenza sarà \(\theta = \arctan\left(\dfrac{\beta_z}{\beta_x}\right)\)
+	\item L'angolo di riflessione sarà calcolabile tramite legge di snell)
+\end{itemize}
 \begin{itemize}
 	\item Componente TE
 	\begin{itemize}
@@ -518,7 +573,7 @@ Esistono 3 tipologie di strutture adattanti:\
 
 \subsubsection{Trasformatore lambda-quarti}
 Funziona esclusivamente con carichi reali. \`E costituito da un pezzo di conduttore lungo un quarto della lunghezza d'onda \( \lambda \).
-Impedenza del trasformatore: \(Z_x = \sqrt{Z_{in} \cdot Z_L} \) con \(Z_{in}\) impedenza di ingresso e \(Z_L\) impedenza di carico.
+Impedenza del trasformatore: \(\displaystyle  Z_x = \sqrt{Z_{in} \cdot Z_L} \) con \(Z_{in}\) impedenza di ingresso e \(Z_L\) impedenza di carico.
 
 \subsubsection{Trasformatore lambda-quarti con neutralizzazione}
 Risolve il problema dell'impossibilità dei trasformatori lambda-quarti di adattare carichi complessi.
@@ -533,7 +588,7 @@ Operativamente, si dovrà:
 	\item Partendo da \(\overline{Z_L}\), ruotare in senso orario sulla circonferenza appena tracciata fino ad intersecare l'asse reale nel punto \(A\)
 	\item Il valore di \( l_n \), normalizzato alla lunghezza d'onda \( \lambda \), sarà letto come differenza tra il prolungamento del punto \(A\) sulla scala esterna della carta di Smith e medesimo prolungamento di \(\overline{Z_L}\)
 	\item Denormalizzare \(\overline{Z_L}\) per ottenere \(Z_L\)
-	\item Il valore dell'impedenza del trasformatore sarà data da \(Z_x = \sqrt{Z_{in} \cdot Z_L} \)
+	\item Il valore dell'impedenza del trasformatore sarà data da \(\displaystyle Z_x = \sqrt{Z_{in} \cdot Z_L} \)
 \end{enumerate}
 
 \subsubsection{Stub semplice}
@@ -644,7 +699,7 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 	\item Direttività \( \displaystyle D = \dfrac{4 \pi}{\int{f(\theta, \phi) d \Omega}} = \dfrac{S_{max}}{S_{iso}} \)	
 	\item Area efficace \( \displaystyle A_e = \dfrac{|l_e| ^ 2 \eta_0}{4 R} \)
 	\item Relazione universale \( \dfrac{G}{A_e} = \dfrac{4 \pi}{\lambda^2} \)
-	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \cdot \sqrt{f_r(\theta, \phi} \)
+	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \cdot \sqrt{f_r(\theta, \phi)} \)
 	\item Potenza ricevuta \(P_R = P_D = S_{inc} \cdot A_e \cdot  f(\theta, \phi) \)
 \end{itemize}
 
@@ -666,7 +721,6 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 		\item I campi sono diretti come \( \overline{u_\theta} \)
 	\end{itemize}
 \end{itemize}
-
 \newpage 
 
 \subsection{Spira magnetica}
