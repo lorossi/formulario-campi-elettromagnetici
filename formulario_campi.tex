@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 29/06/2020}
+\centerline{Versione aggiornata al 29/06/2020 - versione 2}
 \end{doublespacing}
 \newpage
 
@@ -416,25 +416,33 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \textbf{Ipotesi:} onda su piano \(xz\) \textit{destrorso} (asse \(x\) verticale, asse \(z\) orizzontale). Può essere scomposta in componente TE e TM (per sovrapposizione lineare).
 \begin{itemize}
 	\item L'angolo di incidenza sarà \(\theta = \arctan\left(\dfrac{\beta_z}{\beta_x}\right)\)
-	\item L'angolo di riflessione sarà calcolabile tramite legge di snell)
+	\item L'angolo di riflessione sarà calcolabile tramite legge di \textit{Snell}
+	\item Le componenti TE e TM possono essere dedotte usando la \textit{regola della mano destra}
 \end{itemize}
 \begin{itemize}
 	\item Componente TE
 	\begin{itemize}
 		\item Ha componente \(y\)
-		\item Impedenza \( \eta^{TE}_n = \dfrac{\eta}{cos(\theta_n)} \)
-		\item Coefficiente di riflessione \( \Gamma = \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
+		\item Impedenza \( \displaystyle \eta^{TE}_n = \dfrac{\eta}{cos(\theta_n)} \)
+		\item Coefficiente di riflessione \(\displaystyle \Gamma = \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
 	\end{itemize}
 	\item Componente TM
 	\begin{itemize}
 		\item Ha componenti \(xz\)
-		\item Impedenza \( \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
-		\item Coefficiente di riflessione \( \Gamma = - \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
+		\item Impedenza \(\displaystyle \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
+		\item Coefficiente di riflessione \(\displaystyle \Gamma = - \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
 	\end{itemize}
 \end{itemize}
 \begin{itemize}
 	\item Angolo di incidenza \( \theta = \arctan\left( \dfrac{\beta_z}{\beta_x} \right) \)
 	\item La costante di propagazione \(\gamma \rightarrow\) va proiettata nelle direzioni \(x\) e \(y\) tramite \(\sin\) e \(\cos\)
+	\item \(\alpha\) va calcolato come segue:
+	\begin{enumerate}
+		\item \(\beta_{1z} = \beta \cos(\theta_i) \rightarrow \beta = \dfrac{\beta_{1z}}{\cos(\theta)} \)
+		\item \( \beta_{2z} = \dfrac{\beta}{\sqrt{\epsilon_2}} \cos(\theta_t) \)
+		\item La parte reale di \(\beta\) sarà pari al coefficiente di attenuazione, espresso in \(m^-1\)
+		\item Bisogna fare una scelta di segno della radice coerente con la fisica \( \alpha < 0 \)
+	\end{enumerate}
 \end{itemize}
 
 \subsubsection{Trasmissione totale}
@@ -456,7 +464,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \subsubsection{Buon conduttore}
 \begin{itemize}
 	\item \( \sigma >> \omega \epsilon \Rightarrow \gamma = \sqrt{-\omega^2 \mu \epsilon} \)
-	\item \( \eta = \dfrac{1+j}{sqrt{2}} \sqrt{\dfrac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
+	\item \( \eta = \dfrac{1+j}{\sqrt{2}} \sqrt{\dfrac{\pi f \mu}{\sigma}} \Rightarrow \alpha \cong \beta
 	\cong \sqrt{\dfrac{\omega \mu \sigma}{2}} \)
 	\item \( v \cong \dfrac{\omega}{\beta} \cong \sqrt{\dfrac{2 \omega}{\mu \sigma}} \)
 	\item \( \lambda = 2 \pi \delta = \dfrac{v}{f} \)
@@ -510,6 +518,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Resistenza per unità di lunghezza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \)
 	\item Conduttanza per unità di lunghezza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
 \end{itemize}
+Nel caso di uno spicchio di cavo, \textit{divido} per la frazione di spicchio la \textit{capacità} e \textit{moltiplico} per la frazione di spicchio la \textit{conduttanza}.
 
 \subsubsection{Linea a striscia}
 \begin{itemize}
@@ -662,7 +671,7 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 
 \subsubsection{Tensione e corrente in uno stub c.c.}
 \begin{itemize}
-		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a
+		\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \sin(\beta d) \right| \) - il suo massimo si troverà a
 		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 \end{itemize}
@@ -710,6 +719,8 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 	\item Relazione universale \( \dfrac{G}{A_e} = \dfrac{4 \pi}{\lambda^2} \)
 	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \cdot \sqrt{f_r(\theta, \phi)} \)
 	\item Potenza ricevuta \(P_R = P_D = S_{inc} \cdot A_e \cdot  f(\theta, \phi) \)
+	\item Decibel Anisotropici \(dBi = 10 \cdot \log_{10} \left( \dfrac{\textnormal{Potenza ricevuta sull'antenna}}{\textnormal{Potenza ricevuta su un antenna isotropica}} \right) = G_{dB_i}\)
+	\item Link Budget \(P_R = P \cdot G_{tx} \cdot f_t (\theta_t, \phi_t) \cdot \left( \dfrac{\lambda}{4 \pi R} \right) ^ 2 \cdot G_{rx} \cdot f_r (\theta_r, \phi_r) \)
 \end{itemize}
 
 \subsection{Dipolo Hertziano}
@@ -739,7 +750,7 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 	\item Funzione di direttività \(f(\theta, \phi) = 1 \)
 	\item Tensione a vuoto \( V_0 = j \omega \mu \dfrac{E_{inc}}{\eta_0} S \) 
 	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
-	\item Resistenza di radiazione \( R_R = \eta_0 \dfrac{8 \pi^3}{3}\left( \dfrac{5}{\lambda^2} \right) ^ 2 \)
+	\item Resistenza di radiazione \( R_R = \dfrac{|l_e|^2 \eta_0}{4 A_e} = \eta_0 \dfrac{8 \pi^3}{3}\left( \dfrac{S}{\lambda^2} \right) ^ 2 \) con \(S\) superficie della spira.
 \end{itemize}
 
 \subsection{Nastro di corrente}
