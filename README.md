@@ -2,4 +2,16 @@
 Un formulario per il corso di Campi Elettromagnetici - professore Michele D'Amico
 
 ## Ultima versione
-**AGGIORNATO AL 26/06/2020** - [Download diretto qua](https://github.com/lorossi/formulario-campi-elettromagnetici/raw/master/formulario_campi.pdf)
+**AGGIORNATO AL 29/06/2020** - [Download diretto qua](https://github.com/lorossi/formulario-campi-elettromagnetici/raw/master/formulario_campi.pdf)
+
+## Contenuti
+1. Riguardo al formulario
+2. Richiami di base
+3. Metodo delle cariche immagine
+4. Elettrostatica
+5. Magnetostatica
+6. Regime dinamico
+7. Onde piane
+8. Linee di trasmissione
+9. Adattamento di impedenza
+10. Antenne

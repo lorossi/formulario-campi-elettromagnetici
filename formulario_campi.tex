@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 26/06/2020}
+\centerline{Versione aggiornata al 29/06/2020}
 \end{doublespacing}
 \newpage
 
@@ -468,6 +468,10 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \newpage
 
 \section{Linee di trasmissione}
+\begin{itemize}
+	\item Coefficiente di riflessione \( \Gamma(l) = \dfrac{Z_2 - Z_1}{Z_2 + Z_1} e^{-j 2 \beta l} \)
+\end{itemize}
+
 \subsection{Linee TEM}
 \begin{itemize}
 	\item Equazione 1 \( \dfrac{\partial V(z, t)}{\partial z} = - \dfrac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
@@ -490,11 +494,6 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \begin{itemize}
 	\item Tensione \(|V_L| = \left| V^+(0) \right| \left|1 + \Gamma_L \right|\)
 	\item Corrente \(|I_L| = \left| I^+(0) \right| \left|1 - \Gamma_L \right|\)
-	\item Nel caso di un corto circuito - \textit{come negli stub c.c.}:
-	\begin{itemize}
-		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
-		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
-	\end{itemize}
 \end{itemize}
 
 \newpage
@@ -661,10 +660,20 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 	\item La potenza disponibile è uguale in qualsiasi punto della linea
 \end{itemize}
 
-\subsection{Tensione in uno stub c.c}
-La tensione avrà un massimo per \( l = \dfrac{\lambda}{4} \) e sarà nulla in \(l = 0\) (considerando un asse parallelo a \(l\) e nullo nel punto di c.c.). \\\
-Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
+\subsubsection{Tensione e corrente in uno stub c.c.}
+\begin{itemize}
+		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a
+		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
+		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
+\end{itemize}
 
+\subsubsection{Tensione e corrente in uno stub c.a.}
+%\begin{itemize}
+%		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a
+%		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
+%		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
+%\end{itemize}
+	
 \subsection{Note sulla Carta di Smith}
 \begin{itemize}
 	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
@@ -716,7 +725,7 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 	\begin{itemize}
 		\item \textbf{Ipotesi} \(\theta\) colatitudine, \(R\) distanza tra punto considerato e centro del dipolo
 		\item Campo elettrico \(E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} e^{-j \beta R} \sin\theta\) 
-		\item Campo magnetico \(H_\theta = \dfrac{j \omega j \mu I l}{4 \pi R \eta} e^{-j \beta R} \sin\theta\) 
+		\item Campo magnetico \(H_\theta = \dfrac{j \omega \mu I l}{4 \pi R \eta} e^{-j \beta R} \sin\theta\) 
 		\item \( \dfrac{E_\theta}{H_\theta} = \eta \)
 		\item I campi sono diretti come \( \overline{u_\theta} \)
 	\end{itemize}
@@ -779,4 +788,10 @@ Il massimo varrà \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \)
 	\end{tabular} 
 \end{center}
 \vspace{5pt}
+
+\subsection{Note sugli esercizi}
+\begin{itemize}
+	\item In presenza di più antenne, non è valida la relazione \( H_{\textnormal{TOT}} = \dfrac{E_{\textnormal{TOT}}}{\eta_0} \) \textbf{poiché questa relazione non vale per la sovrapposizione delle onde}
+	\item In questi casi si calcolano i campi magnetici \(H\) e poi si sommano i contributi
+\end{itemize}
 \end{document}
