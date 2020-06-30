@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 29/06/2020 - versione 2}
+\centerline{Versione aggiornata al 30/06/2020}
 \end{doublespacing}
 \newpage
 
@@ -90,7 +90,12 @@ L'ultima versione può essere scaricata direttamente cliccando \href{https://git
 		\item Coseno  \( \cos\left( \dfrac{x}{2} \right) = \sqrt{\dfrac{1 + \cos(x)}{2}} \)
 		\item Tangente \( \tan\left( \dfrac{x}{2} \right) = \sqrt{\dfrac{1 - \cos(x)}{1 + \cos(x)}} = \dfrac{1 - \cos(x)}{\sin(x)} = \dfrac{\sin(x)}{1 + \cos(x)} \)
 	\end{itemize}
-	\item Approssimazioni
+	\item Formula di Eulero
+	\begin{itemize}
+		\item Seno \(\sin(x) = \dfrac{e^{ix} + e^{-ix}}{2i} \)
+		\item Coseno \(\cos(x) = \dfrac{e^{ix} - e^{-ix}}{2} \)
+	\end{itemize}
+	\item Approssimazioni (Taylor)
 	\begin{itemize}
 		\item \textbf{Ipotesi:} \( \theta \rightarrow 0 \)
 		\item Seno \( \sin(\theta) \approx \theta \)
@@ -438,7 +443,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item La costante di propagazione \(\gamma \rightarrow\) va proiettata nelle direzioni \(x\) e \(y\) tramite \(\sin\) e \(\cos\)
 	\item \(\alpha\) va calcolato come segue:
 	\begin{enumerate}
-		\item \(\beta_{1z} = \beta \cos(\theta_i) \rightarrow \beta = \dfrac{\beta_{1z}}{\cos(\theta)} \)
+		\item \(\beta_{1z} = \beta \cos(\theta_i) \rightarrow \beta = \dfrac{\beta_{1z}}{\cos(\theta_i)} \)
 		\item \( \beta_{2z} = \dfrac{\beta}{\sqrt{\epsilon_2}} \cos(\theta_t) \)
 		\item La parte reale di \(\beta\) sarà pari al coefficiente di attenuazione, espresso in \(m^-1\)
 		\item Bisogna fare una scelta di segno della radice coerente con la fisica \( \alpha < 0 \)
@@ -520,12 +525,14 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \end{itemize}
 Nel caso di uno spicchio di cavo, \textit{divido} per la frazione di spicchio la \textit{capacità} e \textit{moltiplico} per la frazione di spicchio la \textit{conduttanza}.
 
-\subsubsection{Linea a striscia}
+\subsubsection{Linea a conduttori piani paralleli}
 \begin{itemize}
-	\item Capacità \( C = \epsilon_0 \epsilon_r \dfrac{w}{h} \)
-	\item Induttanza \( L = \mu_0 \dfrac{h}{w} \)
+	\item Capacità \( C = \epsilon \dfrac{w}{h} \)
+	\item Induttanza \( L = \mu \dfrac{h}{w} \)
+	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} = \dfrac{\mu}{\epsilon} \dfrac{h}{W} \)
+	\item Attenuazione nel conduttore \( \alpha_c = \dfrac{R}{2 Z_C} = \dfrac{1}{W Z_c \sigma_C \delta} \)
+	\item Attenuazione dovuta nel dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 	\item Ammettenza per unità di lunghezza \( g = \sigma_d \dfrac{\textnormal{Area}}{h}\)
-	\item Attenuazione dovuta al dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 \end{itemize}
 
 \subsection{Linee quasi TEM}
@@ -533,38 +540,35 @@ Nel caso di uno spicchio di cavo, \textit{divido} per la frazione di spicchio la
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
 \end{itemize}
 
-\newpage 
-
-\subsection{Linee TE in guida rettangolare}
-Sia \(a\) il lato della guida che giace sull'asse \(x\) e sia \(b\) il lato della guida che giace sull'asse \(y\). Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
-\vspace{15pt}
-\begin{center}
-	\begin{tabular}{|Sc|Sc|Sc|}
-		\hline 
-		Modo & Lunghezza di taglio & Frequenza di taglio \\ 
-		\hline 	
-		\(TE_{10}\) & \(\lambda_c = 2a\) & \(f_c = \dfrac{c}{2a}\) \\ 
-		\hline 
-		\(TE_{01}\) & \(\lambda_c = 2b\) & \(f_c = \dfrac{c}{2b}\) \\ 
-		\hline 
-		\(TE_{20}\) & \(\lambda_c = a\) & \(f_c = \dfrac{c}{a}\) \\ 
-		\hline 
-		\(TE_{02}\) & \(\lambda_c = b\) & \(f_c = \dfrac{c}{b}\) \\ 
-		\hline 
-	\end{tabular} 
-\end{center}
-\vspace{5pt}
-
 \begin{itemize}
 	\item Pulsazione di taglio \( \omega_c = \dfrac{1}{\sqrt{\omega \epsilon}} \sqrt{\left( \dfrac{m \pi}{a}\right)^2 + \left( \dfrac{m \pi}{b} \right)^2 }\) con \(a\), \(b\) interi
 	\item Impedenza modale \( Z_{te} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{\omega_c}{\omega} \right) }} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{f_c}{f} \right) }} \)
 	\item Frequenza di taglio \( f_c = \dfrac{1}{2a \sqrt{\mu \epsilon}} \)
 	\item Velocità di gruppo \( v_g = v \sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)} \)
 	\item Lunghezza d'onda di gruppo \( \lambda_g = \dfrac{\lambda}{\sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)}}\)
-	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z_{te}} \)
+	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z_{TE_{10}}} \), con \(Z_{TE_{10}} = \dfrac{\eta}{\sqrt{1 - \left( \dfrac{f_c}{f} \right)}} \)
 	\item Coefficiente di attenuazione \( \alpha = \dfrac{2 \pi}{\lambda_c} \sqrt{1 - \left( \dfrac{f}{f_c} \right) ^ 2} \)
 \end{itemize}
 
+\subsection{Modi TE/TM nella guida d'onda rettangolare}
+Sia \(a\) il lato della guida che giace sull'asse \(x\) \textit{(larghezza)} e sia \(b\) il lato della guida che giace sull'asse \(y\) \textit{(altezza)}. Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
+\vspace{15pt}
+\begin{center}
+	\begin{tabular}{|Sc|Sc|Sc|}
+		\hline 
+		Modo & Lunghezza di taglio & Frequenza di taglio \\ 
+		\hline 	
+		\(TE_{10} / TM_{10}\) & \(\lambda_c = 2a\) & \(f_c = \dfrac{c}{2a}\) \\ 
+		\hline 
+		\(TE_{01} / TM_{01}\) & \(\lambda_c = 2b\) & \(f_c = \dfrac{c}{2b}\) \\ 
+		\hline 
+		\(TE_{20} / TM_{20}\) & \(\lambda_c = a\) & \(f_c = \dfrac{c}{a}\) \\ 
+		\hline 
+		\(TE_{02} / TM_{02}\) & \(\lambda_c = b\) & \(f_c = \dfrac{c}{b}\) \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
+\vspace{5pt}
 
 \newpage
 
@@ -682,7 +686,11 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 %		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
 %		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 %\end{itemize}
-	
+\begin{itemize}
+	\item Tensione
+\end{itemize}	
+
+
 \subsection{Note sulla Carta di Smith}
 \begin{itemize}
 	\item Ruotare in senso orario corrisponde ad una direzione verso il carico (allontanandosi quindi dal generatore)
