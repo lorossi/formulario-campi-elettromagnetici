@@ -2,7 +2,7 @@
 Un formulario per il corso di Campi Elettromagnetici - professore Michele D'Amico
 
 ## Ultima versione
-**AGGIORNATO AL 30/06/2020** - [Download diretto qua](https://github.com/lorossi/formulario-campi-elettromagnetici/raw/master/formulario_campi.pdf)
+**AGGIORNATO AL 01/07/2020** - [Download diretto qua](https://github.com/lorossi/formulario-campi-elettromagnetici/raw/master/formulario_campi.pdf)
 
 ## Contenuti
 1. *Riguardo al formulario*

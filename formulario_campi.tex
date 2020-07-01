@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 30/06/2020}
+\centerline{Versione aggiornata al 01/07/2020}
 \end{doublespacing}
 \newpage
 
@@ -110,6 +110,16 @@ L'ultima versione può essere scaricata direttamente cliccando \href{https://git
 	\item Parte reale di un numero complesso \(x \in \mathbb{C}\), \(Re[x] = \dfrac{x + x^{*}}{2} \)
 	\item Inverso della parte reale: siano \(z = \alpha + j \beta \), \(y = \dfrac{1}{z} \rightarrow \operatorname{Re}(y) \neq \dfrac{1}{\alpha}\), \(\operatorname{Re}(y)  = \dfrac{\alpha}{\alpha^2 + \beta^2}\)
 \end{itemize}
+
+\subsubsection{Calcolo delle radici di numeri complessi tramite calcolatrice CASIO}
+Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire questi calcoli. Il calcolo di una espressione del tipo \(\sqrt{a+bi}\) darà origine ad un \textit{MATH ERROR}.
+\begin{itemize}
+	\item Radice quadrata \( \displaystyle \sqrt{ \textnormal{Abs} \left( \textnormal{ANS} \right) } \angle \left( \textnormal{arg} \left( \textnormal{ANS} \right) \div 2 \right) \)
+	\item Radice cubica \( \displaystyle \sqrt[3]{ \textnormal{Abs} \left( \textnormal{ANS} \right) } \angle \left( \textnormal{arg} \left( \textnormal{ANS} \right) \div 3 \right) \)
+	\item Radice N-esima \(  \left( \textnormal{Abs} \left( \textnormal{ANS} \right) \right) ^ {\sfrac{1}{N}} \angle \left(\textnormal{arg} \left( \textnormal{ANS} \right) \div N \right)\)
+\end{itemize}
+
+\newpage 
 
 \subsection{Decibel e Neper}
 \begin{itemize}
@@ -423,6 +433,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item L'angolo di incidenza sarà \(\theta = \arctan\left(\dfrac{\beta_z}{\beta_x}\right)\)
 	\item L'angolo di riflessione sarà calcolabile tramite legge di \textit{Snell}
 	\item Le componenti TE e TM possono essere dedotte usando la \textit{regola della mano destra}
+	\item \(\beta = \displaystyle \sqrt{\beta_{1x} ^ 2 + \beta_{1z} ^2} \rightarrow f = \dfrac{\beta c}{2 \pi}, \omega = c \beta \)
 \end{itemize}
 \begin{itemize}
 	\item Componente TE
@@ -476,6 +487,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Spessore pelle \( \delta = \dfrac{1}{\alpha} = \dfrac{1}{\sqrt{\pi f \mu \sigma}} \)
 	\item Costante dielettrica \( \epsilon = \epsilon ^ { ' } + j \epsilon ^ { '' } \)
 	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
+	\item Tangente di perdita \(\tan(\delta) = \dfrac{\epsilon^ { " }}{\epsilon^ {'} }\) \textbf{Non è lo spessore pelle}
 \end{itemize}
 
 \newpage
@@ -489,7 +501,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \begin{itemize}
 	\item Equazione 1 \( \dfrac{\partial V(z, t)}{\partial z} = - \dfrac{\partial I(z, t)}{\partial z} \cdot L\) con \(L = \) induttanza per unità di lunghezza
 	\item Equazione 2 \( \dfrac{\partial I(z, t)}{\partial z} = - \dfrac{\partial V(z, t)}{\partial z} \cdot C\) con \(C = \) capacità per unità di lunghezza
-	\item Uguaglianze \( \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \), \(L_0 C_0 = \mu_0 \epsilon_0  \)
+	\item Uguaglianze \( \dfrac{G}{C} = \dfrac{\sigma}{\epsilon} \), \(L C = \mu \epsilon  \)
 	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} \)
 	\item Velocità di fase nel conduttore \( v = \dfrac{1}{\sqrt{LC}} \)
 \end{itemize}
@@ -514,8 +526,8 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \subsubsection{Cavo coassiale}
 \textbf{Ipotesi:} \(a = \) raggio interno, \(b = \) raggio esterno 
 \begin{itemize}
-	\item Capacità \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
-	\item Induttanza \( L = \dfrac{\mu_0}{2 \pi} \ln\left(\dfrac{b}{a}\right) \)
+	\item Capacità per unità di lunghezza \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
+	\item Induttanza per unità di lunghezza \( L = \dfrac{\mu_0}{2 \pi} \ln\left(\dfrac{b}{a}\right) \)
 	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \dfrac{Np}{m}\)
 	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'} \dfrac{Np}{m}\)
 	\item Impedenza \( Z_C = \sqrt{\dfrac{L}{C}} = \dfrac{\eta}{2 \pi} \ln\left(\dfrac{b}{a} \right) =  \dfrac{1}{2 \pi} \sqrt{\dfrac{\mu}{\epsilon}} \ln\left(\dfrac{b}{a}\right)\)
@@ -528,27 +540,37 @@ Nel caso di uno spicchio di cavo, \textit{divido} per la frazione di spicchio la
 \subsubsection{Linea a conduttori piani paralleli}
 \begin{itemize}
 	\item Capacità \( C = \epsilon \dfrac{w}{h} \)
+	\item Capacità per unità di lunghezza \( C = \epsilon \dfrac{w}{h} \cdot l \)
 	\item Induttanza \( L = \mu \dfrac{h}{w} \)
-	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} = \dfrac{\mu}{\epsilon} \dfrac{h}{W} \)
+	\item Induttanza per unità di lunghezza \( L = \mu \dfrac{h}{w} \cdot l \) \textbf{tuttavia normalmente si calcola come} \( L = \dfrac{\mu \epsilon}{C} \)
+	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} = \dfrac{\mu}{\epsilon} \dfrac{h}{W} = \dfrac{\sqrt{\mu \epsilon}}{C} \)
 	\item Attenuazione nel conduttore \( \alpha_c = \dfrac{R}{2 Z_C} = \dfrac{1}{W Z_c \sigma_C \delta} \)
 	\item Attenuazione dovuta nel dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 	\item Ammettenza per unità di lunghezza \( g = \sigma_d \dfrac{\textnormal{Area}}{h}\)
+	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z} \)
 \end{itemize}
 
-\subsection{Linee quasi TEM}
+\subsubsection{Linea Bifilare}
+\textbf{Ipotesi:} \(R^+\), \(R^-\) raggi dei due conduttori, \(d\) distanza tra gli stessi, approssimazione conduttori sottili
+\begin{itemize}
+	\item Tensione \(V = \dfrac{\rho l}{2 \pi \epsilon} \ln \left( \dfrac{d^2}{R^+ \cdot R^-}\right) \)
+	\item Capacità per unità di lunghezza \( C = \dfrac{2 \pi \epsilon}{\ln \left( \dfrac{d^2}{R^+ \cdot R^-}\right)} \)
+	\item Impedenza \( Z = \dfrac{\sqrt{\mu \epsilon}}{c} = \sqrt{\dfrac{\mu}{\epsilon}} \dfrac{1}{\pi} \ln \left( \dfrac{d}{R} \right) \)
+\end{itemize}
+
+\subsection{Linee quasi TEM - dielettrico non omogeneo}
+Esempio di una linea quasi TEM: microstriscia
 \begin{itemize}
 	\item Costante dielettrica efficace \( \epsilon_{eff} = \dfrac{LC}{\mu_0} \)
-\end{itemize}
-
-\begin{itemize}
 	\item Pulsazione di taglio \( \omega_c = \dfrac{1}{\sqrt{\omega \epsilon}} \sqrt{\left( \dfrac{m \pi}{a}\right)^2 + \left( \dfrac{m \pi}{b} \right)^2 }\) con \(a\), \(b\) interi
 	\item Impedenza modale \( Z_{te} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{\omega_c}{\omega} \right) }} = \dfrac{\eta}{\sqrt{1-\left(\dfrac{f_c}{f} \right) }} \)
 	\item Frequenza di taglio \( f_c = \dfrac{1}{2a \sqrt{\mu \epsilon}} \)
 	\item Velocità di gruppo \( v_g = v \sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)} \)
 	\item Lunghezza d'onda di gruppo \( \lambda_g = \dfrac{\lambda}{\sqrt{1- \left( \dfrac{\omega_c}{\omega} ^ 2 \right)}}\)
-	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z_{TE_{10}}} \), con \(Z_{TE_{10}} = \dfrac{\eta}{\sqrt{1 - \left( \dfrac{f_c}{f} \right)}} \)
 	\item Coefficiente di attenuazione \( \alpha = \dfrac{2 \pi}{\lambda_c} \sqrt{1 - \left( \dfrac{f}{f_c} \right) ^ 2} \)
 \end{itemize}
+
+\newpage 
 
 \subsection{Modi TE/TM nella guida d'onda rettangolare}
 Sia \(a\) il lato della guida che giace sull'asse \(x\) \textit{(larghezza)} e sia \(b\) il lato della guida che giace sull'asse \(y\) \textit{(altezza)}. Allora le ampiezze e le frequenze di taglio dei modi \(TM_{mn} \) sono:
@@ -569,6 +591,11 @@ Sia \(a\) il lato della guida che giace sull'asse \(x\) \textit{(larghezza)} e s
 	\end{tabular} 
 \end{center}
 \vspace{5pt}
+\begin{itemize}
+	\item \(TE_{10}\) è detto modo fondamentale e la sua frequenza minima è detta \textit{frequenza di taglio}
+	\item Banda monomodale massima: banda minima compresa tra le frequenze minime di \(TE_{10}\) e \(TE_{20}\)
+	\item Potenza trasportata \( P = \dfrac{|E_0|^2 a b}{4 \cdot Z} \)
+\end{itemize}
 
 \newpage
 
@@ -667,28 +694,25 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 		
 \end{enumerate}
 
-\subsection{Potenza in una linea adattata}
+\subsection{Potenza, tensione e corrente in una linea adattata}
 \begin{itemize}
 	\item Potenza al carico \(P_L = P_D = \dfrac{|V_g|^2}{8 R_g} \)
 	\item La potenza disponibile è uguale in qualsiasi punto della linea
+	\item Al carico \(V_{BB} = V_{AA}^+ \left( e ^ {\gamma l} + \Gamma_{AA} e^{-\gamma l} \right) \) con \(\gamma = \alpha + j \beta \)
+	\item Al generatore \( V_{AA} = V_{AA}^+ \left( 1 + \Gamma_{AA} \right) \)
 \end{itemize}
 
 \subsubsection{Tensione e corrente in uno stub c.c.}
 \begin{itemize}
-		\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \sin(\beta d) \right| \) - il suo massimo si troverà a
+		\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \sin(\beta d) \right| \)
 		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 \end{itemize}
 
 \subsubsection{Tensione e corrente in uno stub c.a.}
-%\begin{itemize}
-%		\item Tensione \( |V(d)| = |2 V(0)| \sin(\beta d) | \) - il suo massimo si troverà a
-%		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
-%		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
-%\end{itemize}
 \begin{itemize}
-	\item Tensione
-\end{itemize}	
+	\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \cos(\beta d) \right| \)
+\end{itemize}
 
 
 \subsection{Note sulla Carta di Smith}
@@ -727,7 +751,8 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 	\item Relazione universale \( \dfrac{G}{A_e} = \dfrac{4 \pi}{\lambda^2} \)
 	\item Tensione a vuoto \( V_0 = l_e \cdot E_{inc} \cdot \sqrt{f_r(\theta, \phi)} \)
 	\item Potenza ricevuta \(P_R = P_D = S_{inc} \cdot A_e \cdot  f(\theta, \phi) \)
-	\item Decibel Anisotropici \(dBi = 10 \cdot \log_{10} \left( \dfrac{\textnormal{Potenza ricevuta sull'antenna}}{\textnormal{Potenza ricevuta su un antenna isotropica}} \right) = G_{dB_i}\)
+	\item Decibel Anisotropici \(dBi = 10 \cdot \log_{10} \left( \dfrac{\textnormal{Potenza ricevuta sull'antenna}}{\textnormal{Potenza ricevuta su un'antenna isotropica}} \right) = 10 \log{10} (G) = G_{dB_i}\)
+	\item Decibel Dipolo  \(dBd = 10 \cdot \log_{10} \left( \dfrac{\textnormal{Potenza ricevuta sull'antenna}}{\textnormal{Potenza ricevuta su un dipolo hertziano}} \right) = 10 \log{10} \left( \dfrac{G}{1.64} \right) = G_{dB_i}\)
 	\item Link Budget \(P_R = P \cdot G_{tx} \cdot f_t (\theta_t, \phi_t) \cdot \left( \dfrac{\lambda}{4 \pi R} \right) ^ 2 \cdot G_{rx} \cdot f_r (\theta_r, \phi_r) \)
 \end{itemize}
 
@@ -748,6 +773,12 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 		\item \( \dfrac{E_\theta}{H_\theta} = \eta \)
 		\item I campi sono diretti come \( \overline{u_\theta} \)
 	\end{itemize}
+\end{itemize}
+
+\subsubsection{Dipoli Hertziani trasmittenti in gruppo}
+\textbf{Ipotesi:} \(n\) dipoli hertziani distanti \(d\) tra di loro, unifrequenziali, alimentati in egual modo e di egual lunghezza
+\begin{itemize}
+	\item Campo elettrico di Radiazione \(E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} e^{-j \beta R} \sin\theta \cdot 2 \cos \left( \beta \dfrac{d}{2} \sin(theta) \right)\)
 \end{itemize}
 \newpage 
 
@@ -810,7 +841,7 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 
 \subsection{Note sugli esercizi}
 \begin{itemize}
-	\item In presenza di più antenne, non è valida la relazione \( H_{\textnormal{TOT}} = \dfrac{E_{\textnormal{TOT}}}{\eta_0} \) \textbf{poiché questa relazione non vale per la sovrapposizione delle onde}
+	\item In presenza di più \textbf{spire}, non è valida la relazione \( H_{\textnormal{TOT}} = \dfrac{E_{\textnormal{TOT}}}{\eta_0} \) \textbf{poiché questa relazione non vale per la sovrapposizione delle onde}
 	\item In questi casi si calcolano i campi magnetici \(H\) e poi si sommano i contributi
 \end{itemize}
 \end{document}
