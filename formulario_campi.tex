@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 02/07/2020}
+\centerline{Versione aggiornata al 06/07/2020}
 \end{doublespacing}
 \newpage
 
@@ -487,7 +487,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\cong \sqrt{\dfrac{\omega \mu \sigma}{2}} \)
 	\item \( v \cong \dfrac{\omega}{\beta} \cong \sqrt{\dfrac{2 \omega}{\mu \sigma}} \)
 	\item \( \lambda = 2 \pi \delta = \dfrac{v}{f} \)
-	\item Spessore pelle \( \delta = \dfrac{1}{\alpha} = \dfrac{1}{\sqrt{\pi f \mu \sigma}} \)
+	\item Spessore pelle \( \delta = \dfrac{1}{\alpha} = \dfrac{1}{\displaystyle \sqrt{\pi f \mu \sigma}} \)
 	\item Costante dielettrica \( \epsilon = \epsilon ^ { ' } + j \epsilon ^ { '' } \)
 	\item Costante di permeabilità magnetica \( \mu = \mu ^ { ' } + j \mu ^ { '' } \)
 	\item Tangente di perdita \(\tan(\delta) = \dfrac{\epsilon^ { " }}{\epsilon^ {'} }\) \textbf{Non è lo spessore pelle}
@@ -498,6 +498,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \section{Linee di trasmissione}
 \begin{itemize}
 	\item Coefficiente di riflessione \( \Gamma(l) = \dfrac{Z_2 - Z_1}{Z_2 + Z_1} e^{-j 2 \beta l} \)
+	\item Velocità di fase \( v_f = \dfrac{1}{\displaystyle\sqrt{L C}} \)
 \end{itemize}
 
 \subsection{Linee TEM}
@@ -531,14 +532,16 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 \begin{itemize}
 	\item Capacità per unità di lunghezza \( C = \dfrac{2 \pi \epsilon}{\ln\left(\dfrac{b}{a}\right)} \) con \( \epsilon = \epsilon_0 \epsilon_r \)
 	\item Induttanza per unità di lunghezza \( L = \dfrac{\mu_0}{2 \pi} \ln\left(\dfrac{b}{a}\right) \)
-	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \dfrac{Np}{m}\)
-	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'} \dfrac{Np}{m}\)
+	\item Attenuazione conduttore \( \alpha_c = \dfrac{R}{2 Z_C} \; \left[\dfrac{Np}{m}\right]\)
+	\item Attenuazione dielettrico \( \alpha_d = \dfrac{G Z_C}{2} = \dfrac{\pi}{\lambda}\dfrac{\epsilon"}{\epsilon'} \; \left[\dfrac{Np}{m}\right]\)
 	\item Impedenza \( Z_C = \sqrt{\dfrac{L}{C}} = \dfrac{\eta}{2 \pi} \ln\left(\dfrac{b}{a} \right) =  \dfrac{1}{2 \pi} \sqrt{\dfrac{\mu}{\epsilon}} \ln\left(\dfrac{b}{a}\right)\)
-	\item Resistenza superficiale \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
 	\item Resistenza per unità di lunghezza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \)
+	\item Resistenza superficiale \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
 	\item Conduttanza per unità di lunghezza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
+	\item Campo elettrico nel conduttore \( E_r = \dfrac{|V|}{\ln \left( \dfrac{a}{b}\right) \dfrac{1}{r}} \)
 \end{itemize}
-Nel caso di uno spicchio di cavo, \textit{divido} per la frazione di spicchio la \textit{capacità} e \textit{moltiplico} per la frazione di spicchio la \textit{conduttanza}.
+Nel caso di un conduttore diviso in \textit{spicchi} pieni di dielettrici diversi, \textit{divido} per la frazione di spicchio la \textit{capacità} e \textit{moltiplico} per la frazione di spicchio la \textit{conduttanza}.
+Per \textit{attenuazione specifica} si intende la \textit{somma} delle attenuazioni del \textit{dielettrico} ed del \textit{conduttore}.s
 
 \subsubsection{Linea a conduttori piani paralleli}
 \begin{itemize}
@@ -783,7 +786,6 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 \begin{itemize}
 	\item Campo elettrico di Radiazione \(E_\theta = \dfrac{j \omega \mu I l}{4 \pi R} e^{-j \beta R} \sin\theta \cdot 2 \cos \left( \beta \dfrac{d}{2} \sin(theta) \right)\)
 \end{itemize}
-\newpage 
 
 \subsection{Spira magnetica}
 \textbf{Ipotesi:} incidenza perpendicolare, adattamento di polarizzazione
@@ -793,6 +795,12 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 	\item Tensione a vuoto \( V_0 = j \omega \mu \dfrac{E_{inc}}{\eta_0} S \) 
 	\item Densità di potenza \( S = \dfrac{P_t D}{4 \pi R^2} f(\theta, \phi) \)
 	\item Resistenza di radiazione \( R_R = \dfrac{|l_e|^2 \eta_0}{4 A_e} = \eta_0 \dfrac{8 \pi^3}{3}\left( \dfrac{S}{\lambda^2} \right) ^ 2 \) con \(S\) superficie della spira.
+	\item Campi irradiati (campi lontani):
+	\begin{itemize}
+		\item Campo elettrico \(E_\phi = \dfrac{j \omega \mu I S}{4 \pi \eta} \left( \dfrac{j \beta}{r} \right) \sin\theta e^ {-j \beta R} \)
+		\item Campo magnetico \(H_\theta = - \dfrac{j \omega \mu I S}{4 \pi} \left( \dfrac{j \beta}{r} \right) \sin\theta e^ {-j \beta R} \)
+		\item I campi sono perpendicolari alla superficie della spira
+	\end{itemize}
 \end{itemize}
 
 \subsection{Nastro di corrente}
