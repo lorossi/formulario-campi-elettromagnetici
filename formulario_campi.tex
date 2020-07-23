@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 06/07/2020}
+\centerline{Versione aggiornata al 23/07/2020}
 \end{doublespacing}
 \newpage
 
@@ -128,7 +128,7 @@ Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire questi cal
 	\begin{itemize}
 		\item Adimensionali
 		\begin{itemize}
-			\item Corrente, tensione, campo, ... \( x_{dB} = 20 \log\left(\dfrac{x}{x_0}\right) \)
+			\item Ampiezza, tensione, campo, ... \( x_{dB} = 20 \log\left(\dfrac{x}{x_0}\right) \)
 			\item Potenza, densità di potenza, ... \( x_{dB} = 10 \log\left(\dfrac{x}{x_0}\right) \)
 			\item \(x_0\) è un valore di riferimento
 		\end{itemize}
@@ -137,7 +137,7 @@ Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire questi cal
 			\item \(1 dBw = 10 \log\left(\dfrac{P}{1w}\right) \)
 			\item \(1 dBm = 10 \log\left(\dfrac{P}{1mw}\right) \)
 		\end{itemize}
-		\item Tensione 
+		\item Ampiezza 
 		\begin{itemize}
 			\item \(1 dBv = 20 \log\left(\dfrac{P}{1v}\right) \)
 			\item \(1 dB \mu v = 20 \log\left(\dfrac{P}{1 \mu v}\right) \)
@@ -151,8 +151,8 @@ Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire questi cal
 	\item Neper: si usa il logaritmo naturale (\( \ln \)) al posto del logaritmo in base 10 (\(\log\)).
 	\item Conversione
 	\begin{itemize}
-		\item Neper \(\rightarrow\) Decibel \( \; \alpha_{db} = \alpha_{Np} \cdot 8.686 \)
-		\item Decibel\(\rightarrow\) Neper \( \; \alpha_{Np} = \dfrac{\alpha_{Db}}{8.686} \)
+		\item Neper \(\rightarrow\) Decibel \( \; \alpha_{dB} = \alpha_{Np} \cdot 8.686 \)
+		\item Decibel\(\rightarrow\) Neper \( \; \alpha_{Np} = \dfrac{\alpha_{dB}}{8.686} \)
 	\end{itemize}
 \end{itemize}
 
@@ -389,7 +389,7 @@ Con \(R\) raggio della sfera e \(\theta\) angolo formato tra l'asse orizzontale 
 	\item Costante di propagazione \( \gamma = \sqrt{j\omega\mu (\sigma + j \omega \epsilon) } = \alpha + j \beta \) dove:
 	\begin{itemize}
 		\item \( \alpha = \textnormal{costante di attenuazione} > 0\)
-		\item \( \beta = \textnormal{costante di fase} = \dfrac{2 \pi}{\lambda} \)
+		\item \( \beta = \textnormal{costante di fase} = \dfrac{2 \pi}{\lambda} = 2 \pi \dfrac{f}{c} \sqrt{\epsilon_r \mu_r}\)
 	\end{itemize}
 	\item Velocità della luce (velocità di propagazione delle onde) \( c = \dfrac{1}{\sqrt{\mu \epsilon}} \cong 3 \cdot 10^8 \)
 	\item Impedenza intrinseca del mezzo \( \eta = \dfrac{E^+}{H^+} \)
@@ -538,10 +538,10 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\item Resistenza per unità di lunghezza \( R = \dfrac{R_s}{2 \pi} \left( \dfrac{1}{a} + \dfrac{1}{b} \right) \)
 	\item Resistenza superficiale \( R_s = \sqrt{\dfrac{\pi f \mu}{\sigma}} = \sqrt{\dfrac{\omega \mu}{2 \sigma}} = \dfrac{1}{\sigma \delta} \)
 	\item Conduttanza per unità di lunghezza \( G = C \dfrac{\omega\epsilon"}{\epsilon'} = \dfrac{2 \pi \omega \epsilon"}{\ln\left(\dfrac{b}{a} \right)} \)
-	\item Campo elettrico nel conduttore \( E_r = \dfrac{|V|}{\ln \left( \dfrac{a}{b}\right) \dfrac{1}{r}} \)
+	\item Campo elettrico nel conduttore \( E_r = \dfrac{|V|}{\ln \left( \dfrac{a}{b}\right)} \dfrac{1}{r} \)
 \end{itemize}
 Nel caso di un conduttore diviso in \textit{spicchi} pieni di dielettrici diversi, \textit{divido} per la frazione di spicchio la \textit{capacità} e \textit{moltiplico} per la frazione di spicchio la \textit{conduttanza}.
-Per \textit{attenuazione specifica} si intende la \textit{somma} delle attenuazioni del \textit{dielettrico} ed del \textit{conduttore}.s
+Per \textit{attenuazione specifica} si intende la \textit{somma} delle attenuazioni del \textit{dielettrico} ed del \textit{conduttore}.
 
 \subsubsection{Linea a conduttori piani paralleli}
 \begin{itemize}
@@ -710,14 +710,14 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 
 \subsubsection{Tensione e corrente in uno stub c.c.}
 \begin{itemize}
-		\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \sin(\beta d) \right| \)
+		\item Tensione \( |V(d)| = \dfrac{\dfrac{|V_g|}{2}}{\sin(\beta d)} \)
 		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
 \end{itemize}
 
 \subsubsection{Tensione e corrente in uno stub c.a.}
 \begin{itemize}
-	\item Tensione \( |V(d)| = |2 \cdot V^+ | \left| \cos(\beta d) \right| \)
+	\item Tensione \( |V(d)| = \dfrac{\dfrac{|V_g|}{2}}{\cos(\beta d)} \)
 \end{itemize}
 
 
