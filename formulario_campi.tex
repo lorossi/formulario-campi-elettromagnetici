@@ -46,7 +46,7 @@
 \vspace{18em}
 \centerline{Quest'opera è distribuita con Licenza Creative Commons Attribuzione}
 \centerline{Non commerciale 4.0 Internazionale \ccbynceu}
-\centerline{Versione aggiornata al 24/10/2020}
+\centerline{Versione aggiornata al 10/02/2020}
 \end{doublespacing}
 \newpage
 
@@ -112,13 +112,29 @@ L'ultima versione può essere scaricata direttamente cliccando \href{https://git
 	\item Somma dei moduli: siano \(z_1, z_2 \in \mathbb{Z} \rightarrow |z_1 + z_2| \neq |z_1| + |z_2| \)
 \end{itemize}
 
-\subsubsection{Calcolo delle radici di numeri complessi tramite calcolatrice CASIO}
-Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire questi calcoli. Il calcolo di una espressione del tipo \(\sqrt{a+bi}\) darà origine ad un \textit{MATH ERROR}.
+\subsection{Numeri complessi con una calcolatrice Casio}
+\textbf{Assicurarsi di essere in modalità \textit{COMPLEX} prima di eseguire tutti questi calcoli.}
+\subsubsection{Calcolo delle radici}
+ Il calcolo di una espressione del tipo \(\sqrt{a+bi}\) darà origine ad un \textit{MATH ERROR}.
 \begin{itemize}
 	\item Radice quadrata \( \displaystyle \sqrt{ \textnormal{Abs} \left( \textnormal{ANS} \right) } \angle \left( \textnormal{arg} \left( \textnormal{ANS} \right) \div 2 \right) \)
 	\item Radice cubica \( \displaystyle \sqrt[3]{ \textnormal{Abs} \left( \textnormal{ANS} \right) } \angle \left( \textnormal{arg} \left( \textnormal{ANS} \right) \div 3 \right) \)
 	\item Radice N-esima \(  \left( \textnormal{Abs} \left( \textnormal{ANS} \right) \right) ^ {\sfrac{1}{N}} \angle \left(\textnormal{arg} \left( \textnormal{ANS} \right) \div N \right)\)
 \end{itemize}
+
+\subsubsection{Conversione da forma cartesiana a forma polare}.
+\begin{enumerate}
+	\item Scrivere il numero in forma cartesiana (ossia \(a + ib\))
+	\item Premere \(=\)
+	\item Premere \(\textnormal{shift} + \textnormal{option} \rightarrow freccia giu \rightarrow 1 \rightarrow = \)
+\end{enumerate}
+
+\subsubsection{Conversione da forma polare a forma cartesiana}
+\begin{enumerate}
+	\item Scrivere il numero in forma cartesiana (ossia \(\rho \angle \theta\))
+	\item Premere \(=\)
+	\item Premere \(\textnormal{shift} + \textnormal{option} \rightarrow freccia giu \rightarrow 2 \rightarrow = \)
+\end{enumerate}
 
 \newpage 
 
@@ -237,7 +253,7 @@ Grazie al \textit{teorema dell'unicità della soluzione}, è possibile affermare
 \subsection{Caso particolare: sfera conduttrice e carica a distanza}
 \textbf{Ipotesi:} la sfera ha raggio \(R\), la carica è disposta a distanza \(d\) ed ha valore \(q\).
 
-Prima di tutto bisogna introdurre, all'interno della sfera, una carica \(Q'  = -\dfrac{R}{d} \cdot q\) a distanza \( D = \dfrac{R^2}{d}\) dal centro della circonferenza. \textbf{Questo passo è sufficiente se la sfera ha potenziale mantenuto costante.} 
+Prima di tutto bisogna introdurre, all'interno della sfera, una carica \(Q'  = -\dfrac{R}{d} \cdot q\) a distanza \( D = \dfrac{R^2}{d}\) dal centro della circonferenza. \textbf{Questo passo è sufficiente se la sfera ha potenziale mantenuto costante e nullo (\(V=0\)).} 
 
 Se così non fosse, si distinguono 2 diversi scenari:
 \begin{enumerate}
@@ -449,7 +465,7 @@ Mezzi ideali e senza perdite, onda elettromagnetica con componenti in \( x \) e 
 	\begin{itemize}
 		\item Ha componenti \(xz\)
 		\item Impedenza \(\displaystyle \eta^{TM}_n = \eta \cdot cos(\theta_n) \)
-		\item Coefficiente di riflessione \(\displaystyle \Gamma = - \dfrac{\eta_{2}^{TE} - \eta_{1}^{TE}}{\eta_{2}^{TE} + \eta_{1}^{TE}} \)
+		\item Coefficiente di riflessione \(\displaystyle \Gamma = - \dfrac{\eta_{2}^{TM} - \eta_{1}^{TM}}{\eta_{2}^{TM} + \eta_{1}^{TM}} \)
 	\end{itemize}
 \end{itemize}
 \begin{itemize}
@@ -551,7 +567,7 @@ Per \textit{attenuazione specifica} si intende la \textit{somma} delle attenuazi
 	\item Capacità per unità di lunghezza \( C = \epsilon \dfrac{w}{h} \cdot l \)
 	\item Induttanza \( L = \mu \dfrac{h}{w} \)
 	\item Induttanza per unità di lunghezza \( L = \mu \dfrac{h}{w} \cdot l \) \textbf{tuttavia normalmente si calcola come} \( L = \dfrac{\mu \epsilon}{C} \)
-	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} = \dfrac{\mu}{\epsilon} \dfrac{h}{W} = \dfrac{\sqrt{\mu \epsilon}}{C} \)
+	\item Impedenza \( Z = \sqrt{\dfrac{L}{C}} = \sqrt{\dfrac{\mu}{\epsilon}} \dfrac{h}{W} = \dfrac{\sqrt{\mu \epsilon}}{C} \)
 	\item Attenuazione nel conduttore \( \alpha_c = \dfrac{R}{2 Z_C} = \dfrac{1}{W Z_c \sigma_C \delta} \)
 	\item Attenuazione dovuta nel dielettrico \( \alpha_d = \dfrac{g}{2 Y_c} \)
 	\item Ammettenza per unità di lunghezza \( g = \sigma_d \dfrac{\textnormal{Area}}{h}\)
@@ -712,14 +728,16 @@ Per calcolare l'impedenza ad una certa distanza \(l\) dal carico di una linea at
 
 \subsubsection{Tensione e corrente in uno stub c.c.}
 \begin{itemize}
-		\item Tensione \( |V(d)| = \dfrac{\dfrac{|V_g|}{2}}{\sin(\beta d)} \)
-		\item Massimo di tensione: \( V_{max} = \dfrac{|V(l_s)|}{sin(\beta l_s)} \), localizzato a \( \dfrac{\lambda}{4} \) dal \textit{c.c.}
+		\item Tensione \( |V(d)| = \left| V_g \right| \left|\sin(\beta d)\right| \)
 		\item Corrente \( |I(d)| = \dfrac{|V_g|}{Z_C} |\cos (\beta d) |\)
+		\item Massimo di tensione localizzato a \( l_s = \dfrac{\lambda}{4} \) dal \textit{c.c.}
 \end{itemize}
 
 \subsubsection{Tensione e corrente in uno stub c.a.}
 \begin{itemize}
-	\item Tensione \( |V(d)| = \dfrac{\dfrac{|V_g|}{2}}{\cos(\beta d)} \)
+	\item Tensione \( |V(d)| = \left|V_g\right| \cos(\beta d) \)
+	\item Corrente \( |I(d)| = \dfrac{\left|V_g\right|}{Z_C} \cos(\beta d) \)
+	\item Massimo di corrente localizzato a \(l_s =  \dfrac{\lambda}{4} \) dal \textit{c.a.}
 \end{itemize}
 
 
